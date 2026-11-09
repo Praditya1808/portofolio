@@ -1,0 +1,92 @@
+/* Custom Styles for Literary & Art Portfolio */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --paper-bg: #FAF7F2;
+  --paper-card: #FFFFFF;
+  --ink-primary: #1C1917;
+  --ink-muted: #57534E;
+  --terracotta: #B85D3B;
+  --terracotta-dark: #964223;
+  --antique-gold: #C5A059;
+  --forest-ink: #273831;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--paper-bg);
+  color: var(--ink-primary);
+  background-image: radial-gradient(#e5dec9 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+.font-serif-literary {
+  font-family: var(--font-serif);
+}
+
+/* 3D Book Cover Effect */
+.book-card {
+  perspective: 1000px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.book-card-inner {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: -6px 8px 24px -4px rgba(44, 37, 35, 0.18), -1px 2px 6px rgba(44, 37, 35, 0.08);
+  border-radius: 4px 10px 10px 4px;
+  position: relative;
+}
+
+/* Spine shadow to simulate a physical book */
+.book-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(255,255,255,0.15) 35%, rgba(0,0,0,0.2) 100%);
+  border-radius: 4px 0 0 4px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.book-card:hover .book-card-inner {
+  transform: translateY(-8px) rotateY(-8deg) rotateZ(1deg);
+  box-shadow: -14px 18px 32px -4px rgba(44, 37, 35, 0.28), -2px 4px 10px rgba(44, 37, 35, 0.12);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F2ECE1;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5CBBF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* Smooth modal backdrop */
+.modal-backdrop {
+  backdrop-filter: blur(6px);
+  background-color: rgba(28, 25, 23, 0.65);
+}
+
+/* Floating animation */
+@keyframes softFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-soft-float {
+  animation: softFloat 4s ease-in-out infinite;
+}
+
