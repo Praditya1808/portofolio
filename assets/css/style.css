@@ -87,3 +87,22 @@ body {
     display: flex !important;
   }
 }
+
+/* Photo Slider Carousel Track & Slides */
+#slider-track {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.photo-slide {
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  height: 100% !important;
+  position: relative;
+  overflow: hidden;
+}

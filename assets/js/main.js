@@ -119,8 +119,8 @@ const bookData = [
   }
 ];
 
-// Inisialisasi
-document.addEventListener("DOMContentLoaded", () => {
+// Inisialisasi Utama
+function startApp() {
   renderPortfolio("all");
   setupEventListeners();
   initPhotoSlider();
@@ -128,7 +128,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.lucide) {
     lucide.createIcons();
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startApp);
+} else {
+  startApp();
+}
 
 // Render Portofolio Buku & Proyek
 function renderPortfolio(filterCategory = "all") {
@@ -424,6 +430,24 @@ function initPhotoSlider() {
   function prevSlide() {
     goToSlide(currentIdx - 1);
   }
+
+  // Ekspor fungsi ke window agar tombol HTML onclick selalu berfungsi langsung
+  window.sliderNext = function(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    nextSlide();
+    restartAutoSlide();
+  };
+
+  window.sliderPrev = function(e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    prevSlide();
+    restartAutoSlide();
+  };
+
+  window.goToSlide = function(idx) {
+    goToSlide(idx);
+    restartAutoSlide();
+  };
 
   if (nextBtn) {
     nextBtn.addEventListener("click", (e) => {

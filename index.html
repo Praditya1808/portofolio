@@ -11,7 +11,8 @@
   <!-- Open Graph / Meta Berbagi Sosial Media -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="El Syifa Thea Salsabila — Editor">
-  <meta property="og:description" content="Portofolio resmi Editor Naskah Buku & Pengembang Cerita Fiksi (Akad Media Cakrawala, S.Pd. Bahasa & Sastra Indonesia UM).">
+  <meta property="og:description"
+    content="Portofolio resmi Editor Naskah Buku & Pengembang Cerita Fiksi (Akad Media Cakrawala, S.Pd. Bahasa & Sastra Indonesia UM).">
   <meta property="og:image" content="assets/images/el-syifa.jpg">
 
   <!-- Tailwind CSS CDN -->
@@ -246,20 +247,23 @@
                     <img src="assets/images/el-syifa.jpg" alt="Foto Portofolio El Syifa 1"
                       class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
+                    <span class="absolute top-4 left-4 z-20 bg-stone-900/70 backdrop-blur-md text-amber-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-white/20">Foto 1</span>
                   </div>
 
                   <!-- SLIDE 2 (Foto Kedua) -->
                   <div class="photo-slide w-full h-full shrink-0 relative">
-                    <img src="assets/images/1.jpg" alt="Foto Portofolio El Syifa 2"
+                    <img src="assets/images/el-syifa1.jpg" alt="Foto Portofolio El Syifa 2"
                       class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
+                    <span class="absolute top-4 left-4 z-20 bg-stone-900/70 backdrop-blur-md text-amber-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-white/20">Foto 2</span>
                   </div>
 
                   <!-- SLIDE 3 (Foto Ketiga) -->
                   <div class="photo-slide w-full h-full shrink-0 relative">
-                    <img src="assets/images/2.jpg" alt="Foto Portofolio El Syifa 3"
+                    <img src="assets/images/el-syifa2.jpg" alt="Foto Portofolio El Syifa 3"
                       class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
+                    <span class="absolute top-4 left-4 z-20 bg-stone-900/70 backdrop-blur-md text-amber-200 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-white/20">Foto 3</span>
                   </div>
 
                   <!-- TIPS: Untuk menambah foto ke-4, cukup tambahkan di sini:
@@ -269,12 +273,14 @@
                   -->
                 </div>
 
-                <!-- Tombol Navigasi Geser Kiri / Kanan (Jelas & Selalu Siap Diklik) -->
+                <!-- Tombol Navigasi Geser Kiri / Kanan (Jelas & Selalu Siap Diklik Langsung) -->
                 <button id="slider-prev" type="button" aria-label="Foto Sebelumnya"
+                  onclick="window.sliderPrev &amp;&amp; window.sliderPrev(event)"
                   class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-terracotta text-white flex items-center justify-center backdrop-blur-md transition-all z-30 shadow-xl border border-white/20 cursor-pointer hover:scale-110 active:scale-95">
                   <i data-lucide="chevron-left" class="w-5 h-5"></i>
                 </button>
                 <button id="slider-next" type="button" aria-label="Foto Selanjutnya"
+                  onclick="window.sliderNext &amp;&amp; window.sliderNext(event)"
                   class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-terracotta text-white flex items-center justify-center backdrop-blur-md transition-all z-30 shadow-xl border border-white/20 cursor-pointer hover:scale-110 active:scale-95">
                   <i data-lucide="chevron-right" class="w-5 h-5"></i>
                 </button>
@@ -282,7 +288,11 @@
                 <!-- Indikator Slide & Angka Counter di Pojok Kanan Atas -->
                 <div
                   class="absolute top-4 right-4 flex items-center gap-2 z-30 bg-stone-950/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-white text-[11px] font-medium shadow-md">
-                  <div id="slider-dots" class="flex items-center gap-1.5"></div>
+                  <div id="slider-dots" class="flex items-center gap-1.5">
+                    <button type="button" onclick="window.goToSlide &amp;&amp; window.goToSlide(0)" class="w-5 h-2 rounded-full bg-amber-300 transition-all"></button>
+                    <button type="button" onclick="window.goToSlide &amp;&amp; window.goToSlide(1)" class="w-2 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all"></button>
+                    <button type="button" onclick="window.goToSlide &amp;&amp; window.goToSlide(2)" class="w-2 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all"></button>
+                  </div>
                   <span class="text-amber-300 font-mono text-[11px] font-semibold pl-1.5 border-l border-white/20">
                     <span id="slider-counter-current">1</span>/<span id="slider-counter-total">3</span>
                   </span>
