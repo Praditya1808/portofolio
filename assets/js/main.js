@@ -344,12 +344,13 @@ function closeBookModal() {
   }
 }
 
-// Slider Foto Profil Interaktif (Carousel)
+// Slider Foto Profil Interaktif (Horizontal Slide & Drag)
 function initPhotoSlider() {
   const slider = document.getElementById("photo-slider");
-  if (!slider) return;
+  const track = document.getElementById("slider-track");
+  if (!slider || !track) return;
 
-  const slides = slider.querySelectorAll(".photo-slide");
+  const slides = track.querySelectorAll(".photo-slide");
   const prevBtn = document.getElementById("slider-prev");
   const nextBtn = document.getElementById("slider-next");
   const dotsContainer = document.getElementById("slider-dots");
@@ -360,8 +361,9 @@ function initPhotoSlider() {
 
   let currentIdx = 0;
   let autoSlideTimer = null;
+  const AUTO_SLIDE_DELAY = 30000; // 30 detik sesuai permintaan
 
-  // Setup Indikator Titik (Dots)
+  // Setup Indikator Dots
   if (dotsContainer) {
     dotsContainer.innerHTML = "";
     slides.forEach((_, idx) => {
@@ -371,9 +373,10 @@ function initPhotoSlider() {
       dot.className = `h-2 rounded-full transition-all duration-300 ${
         idx === 0 ? "bg-amber-300 w-5" : "bg-white/40 hover:bg-white/70 w-2"
       }`;
-      dot.addEventListener("click", () => {
+      dot.addEventListener("click", (e) => {
+        e.stopPropagation();
         goToSlide(idx);
-        resetAutoSlide();
+        restartAutoSlide();
       });
       dotsContainer.appendChild(dot);
     });
@@ -383,18 +386,16 @@ function initPhotoSlider() {
     counterTotal.textContent = slides.length;
   }
 
-  function updateSlider() {
-    slides.forEach((slide, idx) => {
-      if (idx === currentIdx) {
-        slide.classList.remove("opacity-0", "pointer-events-none", "z-0");
-        slide.classList.add("opacity-100", "z-10");
-      } else {
-        slide.classList.remove("opacity-100", "z-10");
-        slide.classList.add("opacity-0", "pointer-events-none", "z-0");
-      }
-    });
+  function updateSlider(animate = true) {
+    if (animate) {
+      track.style.transition = "transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)";
+    } else {
+      track.style.transition = "none";
+    }
 
-    // Update Tampilan Dots
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+
+    // Update Dots & Counter
     if (dotsContainer) {
       const dots = dotsContainer.querySelectorAll("button");
       dots.forEach((dot, idx) => {
@@ -413,7 +414,7 @@ function initPhotoSlider() {
 
   function goToSlide(idx) {
     currentIdx = (idx + slides.length) % slides.length;
-    updateSlider();
+    updateSlider(true);
   }
 
   function nextSlide() {
@@ -428,7 +429,7 @@ function initPhotoSlider() {
     nextBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       nextSlide();
-      resetAutoSlide();
+      restartAutoSlide();
     });
   }
 
@@ -436,51 +437,98 @@ function initPhotoSlider() {
     prevBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       prevSlide();
-      resetAutoSlide();
+      restartAutoSlide();
     });
   }
 
-  // Dukungan Swipe Layar Sentuh (Mobile Touch)
-  let touchStartX = 0;
-  let touchEndX = 0;
+  // Drag / Swipe Interaktif (Mendukung Mouse & Layar Sentuh HP)
+  let isDragging = false;
+  let startX = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+  let animationID = null;
 
+  // Touch Events
   slider.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    prevTranslate = -currentIdx * slider.offsetWidth;
+    track.style.transition = "none";
+    clearInterval(autoSlideTimer);
+  }, { passive: true });
+
+  slider.addEventListener("touchmove", (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diff = currentX - startX;
+    track.style.transform = `translateX(${prevTranslate + diff}px)`;
   }, { passive: true });
 
   slider.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, { passive: true });
+    if (!isDragging) return;
+    isDragging = false;
+    const endX = e.changedTouches[0].clientX;
+    const diff = endX - startX;
 
-  function handleSwipe() {
-    const diff = touchEndX - touchStartX;
-    if (Math.abs(diff) > 40) {
-      if (diff < 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-      resetAutoSlide();
+    if (diff < -50) {
+      nextSlide();
+    } else if (diff > 50) {
+      prevSlide();
+    } else {
+      updateSlider(true);
     }
-  }
+    restartAutoSlide();
+  });
 
-  // Otomatis Bergeser Lembut (Bisa dijeda saat mouse menyorot foto)
-  function startAutoSlide() {
-    if (slides.length > 1) {
-      autoSlideTimer = setInterval(nextSlide, 5000);
-    }
-  }
-
-  function resetAutoSlide() {
+  // Mouse Drag Events (Desktop)
+  slider.addEventListener("mousedown", (e) => {
+    // Jangan drag jika tombol panah atau dots yang diklik
+    if (e.target.closest("button")) return;
+    isDragging = true;
+    startX = e.clientX;
+    prevTranslate = -currentIdx * slider.offsetWidth;
+    track.style.transition = "none";
+    slider.classList.add("cursor-grabbing");
     clearInterval(autoSlideTimer);
+  });
+
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const diff = e.clientX - startX;
+    track.style.transform = `translateX(${prevTranslate + diff}px)`;
+  });
+
+  window.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    slider.classList.remove("cursor-grabbing");
+    const diff = e.clientX - startX;
+
+    if (diff < -50) {
+      nextSlide();
+    } else if (diff > 50) {
+      prevSlide();
+    } else {
+      updateSlider(true);
+    }
+    restartAutoSlide();
+  });
+
+  // Auto-slide setiap 30 detik
+  function startAutoSlide() {
+    clearInterval(autoSlideTimer);
+    if (slides.length > 1) {
+      autoSlideTimer = setInterval(() => {
+        nextSlide();
+      }, AUTO_SLIDE_DELAY);
+    }
+  }
+
+  function restartAutoSlide() {
     startAutoSlide();
   }
 
-  slider.addEventListener("mouseenter", () => clearInterval(autoSlideTimer));
-  slider.addEventListener("mouseleave", () => startAutoSlide());
-
-  updateSlider();
+  updateSlider(false);
   startAutoSlide();
 }
 

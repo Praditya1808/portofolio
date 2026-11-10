@@ -228,59 +228,56 @@
             <!-- Profile Photo Frame -->
             <div class="bg-white p-4 sm:p-5 rounded-3xl border border-stone-200/90 shadow-2xl space-y-4">
 
-              <!-- Interactive Photo Slider Container (Template Foto Geser) -->
+              <!-- Interactive Photo Slider Container (Horizontal Slide & Drag) -->
               <div id="photo-slider"
-                class="aspect-[4/5] w-full rounded-2xl overflow-hidden bg-stone-100 relative group shadow-inner select-none">
+                class="aspect-[4/5] w-full rounded-2xl overflow-hidden bg-stone-100 relative shadow-inner select-none cursor-grab active:cursor-grabbing">
 
-                <!-- Track Foto / Slides -->
-                <div class="w-full h-full relative">
+                <!-- Sliding Track (Foto Berjajar Horizontal) -->
+                <div id="slider-track" class="w-full h-full flex transition-transform duration-500 ease-out">
 
                   <!-- SLIDE 1 (Foto Utama) -->
-                  <div
-                    class="photo-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-100 z-10">
+                  <div class="photo-slide w-full h-full shrink-0 relative">
                     <img src="assets/images/el-syifa.jpg" alt="Foto Portofolio El Syifa 1"
-                      class="w-full h-full object-cover object-center"
+                      class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
                   </div>
 
                   <!-- SLIDE 2 (Foto Kedua) -->
-                  <div
-                    class="photo-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none">
+                  <div class="photo-slide w-full h-full shrink-0 relative">
                     <img src="assets/images/1.jpg" alt="Foto Portofolio El Syifa 2"
-                      class="w-full h-full object-cover object-center"
+                      class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
                   </div>
 
                   <!-- SLIDE 3 (Foto Ketiga) -->
-                  <div
-                    class="photo-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none">
+                  <div class="photo-slide w-full h-full shrink-0 relative">
                     <img src="assets/images/2.jpg" alt="Foto Portofolio El Syifa 3"
-                      class="w-full h-full object-cover object-center"
+                      class="w-full h-full object-cover object-center pointer-events-none"
                       onerror="this.src='assets/images/profile-placeholder.svg'">
                   </div>
 
-                  <!-- TIPS: Untuk menambah foto ke-4, duplikat baris di bawah ini:
-                  <div class="photo-slide absolute inset-0 transition-opacity duration-700 ease-in-out opacity-0 z-0 pointer-events-none">
-                    <img src="assets/images/foto-keempat.jpg" alt="Foto El Syifa" class="w-full h-full object-cover object-center">
+                  <!-- TIPS: Untuk menambah foto ke-4, cukup tambahkan di sini:
+                  <div class="photo-slide w-full h-full shrink-0 relative">
+                    <img src="assets/images/nama-foto-anda.jpg" alt="Foto El Syifa" class="w-full h-full object-cover object-center pointer-events-none">
                   </div>
                   -->
                 </div>
 
-                <!-- Tombol Navigasi Geser Kiri / Kanan (Muncul saat mouse diarahkan ke foto) -->
+                <!-- Tombol Navigasi Geser Kiri / Kanan (Jelas & Selalu Siap Diklik) -->
                 <button id="slider-prev" type="button" aria-label="Foto Sebelumnya"
-                  class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-stone-900/60 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all z-30 shadow-lg cursor-pointer">
+                  class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-terracotta text-white flex items-center justify-center backdrop-blur-md transition-all z-30 shadow-xl border border-white/20 cursor-pointer hover:scale-110 active:scale-95">
                   <i data-lucide="chevron-left" class="w-5 h-5"></i>
                 </button>
                 <button id="slider-next" type="button" aria-label="Foto Selanjutnya"
-                  class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-stone-900/60 hover:bg-stone-900 text-white flex items-center justify-center backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all z-30 shadow-lg cursor-pointer">
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-stone-900/80 hover:bg-terracotta text-white flex items-center justify-center backdrop-blur-md transition-all z-30 shadow-xl border border-white/20 cursor-pointer hover:scale-110 active:scale-95">
                   <i data-lucide="chevron-right" class="w-5 h-5"></i>
                 </button>
 
                 <!-- Indikator Slide & Angka Counter di Pojok Kanan Atas -->
                 <div
-                  class="absolute top-4 right-4 flex items-center gap-2 z-30 bg-stone-950/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 text-white text-[11px] font-medium shadow-md">
+                  class="absolute top-4 right-4 flex items-center gap-2 z-30 bg-stone-950/70 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-white text-[11px] font-medium shadow-md">
                   <div id="slider-dots" class="flex items-center gap-1.5"></div>
-                  <span class="text-white/60 text-[10px] pl-1 border-l border-white/20">
+                  <span class="text-amber-300 font-mono text-[11px] font-semibold pl-1.5 border-l border-white/20">
                     <span id="slider-counter-current">1</span>/<span id="slider-counter-total">3</span>
                   </span>
                 </div>
