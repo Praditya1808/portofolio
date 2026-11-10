@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderPortfolio("all");
   setupEventListeners();
   initPhotoSlider();
+  setupScrollSpy();
   if (window.lucide) {
     lucide.createIcons();
   }
@@ -481,4 +482,32 @@ function initPhotoSlider() {
 
   updateSlider();
   startAutoSlide();
+}
+
+// Active Scrollspy untuk Navbar
+function setupScrollSpy() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("header nav a[href^='#']");
+
+  window.addEventListener("scroll", () => {
+    let scrollPos = window.scrollY + 120;
+
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute("id");
+
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach(link => {
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("text-terracotta", "font-bold");
+            link.classList.remove("text-stone-600");
+          } else {
+            link.classList.remove("text-terracotta", "font-bold");
+            link.classList.add("text-stone-600");
+          }
+        });
+      }
+    });
+  });
 }
