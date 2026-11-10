@@ -1,5 +1,4 @@
 /* Custom Styles for Literary & Art Portfolio */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -8,7 +7,7 @@
   --paper-card: #FFFFFF;
   --ink-primary: #1C1917;
   --ink-muted: #57534E;
-  --terracotta: #B85D3B;
+  --terracotta: #A34E2E;
   --terracotta-dark: #964223;
   --antique-gold: #C5A059;
   --forest-ink: #273831;
@@ -105,4 +104,29 @@ body {
   height: 100% !important;
   position: relative;
   overflow: hidden;
+}
+
+/* Offset anchor agar judul section tidak tertutup sticky header */
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Hormati preferensi pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .book-card:hover .book-card-inner {
+    transform: none;
+  }
 }

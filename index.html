@@ -14,18 +14,45 @@
   <meta property="og:description"
     content="Portofolio resmi Editor Naskah Buku & Pengembang Cerita Fiksi (Akad Media Cakrawala, S.Pd. Bahasa & Sastra Indonesia UM).">
   <meta property="og:image" content="assets/images/el-syifa.jpg">
+  <meta name="theme-color" content="#FAF8F5">
+
+  <!-- Structured Data (SEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "El Syifa Thea Salsabila",
+      "jobTitle": "Editor Naskah Buku & Spesialis Penerbitan",
+      "email": "mailto:elsyifatheas@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Depok",
+        "addressRegion": "Jawa Barat",
+        "addressCountry": "ID"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universitas Negeri Malang"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Akad Media Cakrawala"
+      },
+      "sameAs": ["https://linkedin.com/in/el-syifa"]
+    }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.468.0"></script>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet">
 
   <!-- Custom Styles & Favicon -->
@@ -40,7 +67,7 @@
             paper: '#FAF8F5',
             ink: '#1C1917',
             terracotta: {
-              DEFAULT: '#B85D3B',
+              DEFAULT: '#A34E2E',
               dark: '#964223',
               light: '#F8EDE7'
             },
@@ -94,7 +121,7 @@
       <!-- Desktop Action Buttons -->
       <div class="hidden md:flex items-center space-x-3 shrink-0">
         <a href="assets/docs/CV_El_Syifa_Thea_Salsabila.pdf" target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-stone-300 hover:border-stone-400 bg-white text-stone-700 text-xs font-semibold tracking-wide transition-all shadow-xs hover:text-terracotta">
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-stone-300 hover:border-stone-400 bg-white text-stone-700 text-xs font-semibold tracking-wide transition-all shadow-sm hover:text-terracotta">
           <i data-lucide="file-text" class="w-4 h-4 text-terracotta"></i>
           <span>Curriculum Vitae</span>
         </a>
@@ -106,7 +133,7 @@
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn"
+      <button id="mobile-menu-btn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu"
         class="lg:hidden p-2 rounded-lg text-stone-700 hover:text-stone-900 hover:bg-stone-100">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
@@ -135,6 +162,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- Hero & Profile Introduction Section -->
   <section id="profil" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden border-b border-stone-200/70">
     <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-8 lg:px-12">
@@ -165,13 +193,14 @@
           <!-- Paragraphs -->
           <div class="space-y-4 text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl">
             <p>
-              Editor naskah buku dengan keahlian penerbitan menyeluruh (*end-to-end book publishing*). Berlatar belakang
-              akademis <strong>Pendidikan Bahasa dan Sastra Indonesia dari Universitas Negeri Malang</strong> (IPK 3.81,
-              lulus 7 semester).
+              Editor naskah buku dengan keahlian penerbitan menyeluruh (<em>end-to-end book publishing</em>). Berlatar
+              belakang akademis <strong>Pendidikan Bahasa dan Sastra Indonesia dari Universitas Negeri Malang</strong>
+              (IPK 3.81, lulus 7 semester).
             </p>
             <p class="text-sm sm:text-base text-stone-600">
-              Berpengalaman mengelola naskah dari tahap *pitching* penulis, penyuntingan substantif, *visual direction*
-              untuk ilustrasi sampul &amp; karakter, hingga sukses membidani buku-buku komersial berprestasi dengan
+              Berpengalaman mengelola naskah dari tahap <em>pitching</em> penulis, penyuntingan substantif, <em>visual
+                direction</em> untuk ilustrasi sampul &amp; karakter, hingga sukses membidani buku-buku komersial
+              berprestasi dengan
               capaian sekitar <strong>2.000 pre-orders</strong> serta rangkaian promosi di 4 kota.
             </p>
           </div>
@@ -184,17 +213,17 @@
               <span>Unduh CV Lengkap (PDF)</span>
             </a>
             <a href="#pengalaman"
-              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-xs">
+              class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-sm">
               <span>Rekam Jejak Karier</span>
               <i data-lucide="arrow-down" class="w-4 h-4 text-stone-500"></i>
             </a>
             <a href="https://linkedin.com/in/el-syifa" target="_blank"
-              class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-xs">
+              class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-sm">
               <i data-lucide="linkedin" class="w-4 h-4 text-blue-600"></i>
               <span>LinkedIn</span>
             </a>
             <a href="mailto:elsyifatheas@gmail.com"
-              class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-xs">
+              class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 border border-stone-300 transition-all shadow-sm">
               <i data-lucide="mail" class="w-4 h-4 text-terracotta"></i>
               <span>Email</span>
             </a>
@@ -236,32 +265,32 @@
             <div class="bg-white p-4 sm:p-5 rounded-3xl border border-stone-200/90 shadow-2xl space-y-4">
 
               <!-- Photo Slider -->
-              <div id="photo-slider" style="position:relative; aspect-ratio:4/5; width:100%; border-radius:1rem; overflow:hidden; background:#e7e5e4; user-select:none; cursor:grab; box-shadow:inset 0 2px 8px rgba(0,0,0,0.1);">
+              <div id="photo-slider" role="region" aria-roledescription="carousel" aria-label="Foto profil El Syifa Thea Salsabila" style="position:relative; aspect-ratio:4/5; width:100%; border-radius:1rem; overflow:hidden; background:#e7e5e4; user-select:none; cursor:grab; box-shadow:inset 0 2px 8px rgba(0,0,0,0.1);">
 
                 <!-- Track -->
                 <div id="slider-track" style="display:flex; height:100%; transform:translateX(0); transition:transform 0.45s cubic-bezier(0.25,1,0.5,1); will-change:transform;">
 
                   <!-- Slide 1 -->
                   <div style="flex:0 0 100%; min-width:100%; height:100%; position:relative; overflow:hidden;">
-                    <img src="assets/images/el-syifa.jpg" alt="Foto El Syifa 1"
+                    <img src="assets/images/el-syifa.jpg" alt="El Syifa Thea Salsabila — foto profil 1"
                       style="width:100%; height:100%; object-fit:cover; object-position:center top; pointer-events:none; display:block;"
-                      onerror="this.src='assets/images/profile-placeholder.svg'">
+                      decoding="async" fetchpriority="high" onerror="this.src='assets/images/profile-placeholder.svg'">
                     <span style="position:absolute;top:1rem;left:1rem;z-index:20;background:rgba(28,25,23,0.75);backdrop-filter:blur(8px);color:#fcd34d;font-size:10px;font-weight:700;padding:2px 10px;border-radius:9999px;border:1px solid rgba(255,255,255,0.2);">Foto 1</span>
                   </div>
 
                   <!-- Slide 2 -->
                   <div style="flex:0 0 100%; min-width:100%; height:100%; position:relative; overflow:hidden;">
-                    <img src="assets/images/el-syifa1.jpg" alt="Foto El Syifa 2"
+                    <img src="assets/images/el-syifa1.jpg" alt="El Syifa Thea Salsabila — foto profil 2" loading="lazy"
                       style="width:100%; height:100%; object-fit:cover; object-position:center top; pointer-events:none; display:block;"
-                      onerror="this.src='assets/images/profile-placeholder.svg'">
+                      decoding="async" onerror="this.src='assets/images/profile-placeholder.svg'">
                     <span style="position:absolute;top:1rem;left:1rem;z-index:20;background:rgba(28,25,23,0.75);backdrop-filter:blur(8px);color:#fcd34d;font-size:10px;font-weight:700;padding:2px 10px;border-radius:9999px;border:1px solid rgba(255,255,255,0.2);">Foto 2</span>
                   </div>
 
                   <!-- Slide 3 -->
                   <div style="flex:0 0 100%; min-width:100%; height:100%; position:relative; overflow:hidden;">
-                    <img src="assets/images/el-syifa2.jpg" alt="Foto El Syifa 3"
+                    <img src="assets/images/el-syifa2.jpg" alt="El Syifa Thea Salsabila — foto profil 3" loading="lazy"
                       style="width:100%; height:100%; object-fit:cover; object-position:center top; pointer-events:none; display:block;"
-                      onerror="this.src='assets/images/profile-placeholder.svg'">
+                      decoding="async" onerror="this.src='assets/images/profile-placeholder.svg'">
                     <span style="position:absolute;top:1rem;left:1rem;z-index:20;background:rgba(28,25,23,0.75);backdrop-filter:blur(8px);color:#fcd34d;font-size:10px;font-weight:700;padding:2px 10px;border-radius:9999px;border:1px solid rgba(255,255,255,0.2);">Foto 3</span>
                   </div>
                 </div>
@@ -280,15 +309,27 @@
 
                 <!-- Dots & Counter -->
                 <div style="position:absolute;top:1rem;right:1rem;z-index:30;background:rgba(12,10,9,0.72);backdrop-filter:blur(8px);padding:0.375rem 0.875rem;border-radius:9999px;border:1px solid rgba(255,255,255,0.2);display:flex;align-items:center;gap:0.5rem;">
-                  <div id="slider-dots" style="display:flex;align-items:center;gap:0.375rem;">
-                    <button type="button" data-dot="0" style="width:1.25rem;height:0.5rem;border-radius:9999px;background:#fcd34d;border:none;cursor:pointer;padding:0;transition:all 0.3s;"></button>
-                    <button type="button" data-dot="1" style="width:0.5rem;height:0.5rem;border-radius:9999px;background:rgba(255,255,255,0.4);border:none;cursor:pointer;padding:0;transition:all 0.3s;"></button>
-                    <button type="button" data-dot="2" style="width:0.5rem;height:0.5rem;border-radius:9999px;background:rgba(255,255,255,0.4);border:none;cursor:pointer;padding:0;transition:all 0.3s;"></button>
-                  </div><!-- Bottom Gradient Name Overlay (Stabil di atas semua slide) -->
+                  <div id="slider-dots" style="display:flex;align-items:center;gap:0.25rem;">
+                    <button type="button" data-dot="0" aria-label="Tampilkan foto 1" aria-current="true" style="width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;padding:0;">
+                      <span class="slider-dot-visual" style="display:block;width:1.25rem;height:0.5rem;border-radius:9999px;background:#fcd34d;transition:all 0.3s;"></span>
+                    </button>
+                    <button type="button" data-dot="1" aria-label="Tampilkan foto 2" style="width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;padding:0;">
+                      <span class="slider-dot-visual" style="display:block;width:0.5rem;height:0.5rem;border-radius:9999px;background:rgba(255,255,255,0.4);transition:all 0.3s;"></span>
+                    </button>
+                    <button type="button" data-dot="2" aria-label="Tampilkan foto 3" style="width:1.5rem;height:1.5rem;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;padding:0;">
+                      <span class="slider-dot-visual" style="display:block;width:0.5rem;height:0.5rem;border-radius:9999px;background:rgba(255,255,255,0.4);transition:all 0.3s;"></span>
+                    </button>
+                  </div>
+                  <span style="color:#fcd34d;font-family:monospace;font-size:11px;font-weight:600;padding-left:0.375rem;border-left:1px solid rgba(255,255,255,0.2);">
+                    <span id="slider-counter-current">1</span>/<span id="slider-counter-total">3</span>
+                  </span>
+                </div>
+
+                <!-- Bottom Gradient Name Overlay (Stabil di atas semua slide) -->
                 <div
                   class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-stone-950/90 via-stone-950/25 to-transparent flex flex-col justify-end p-5 text-white z-20 pointer-events-none">
                   <span class="text-[10px] tracking-wider uppercase font-semibold text-amber-300">Editor</span>
-                  <h3 class="font-serif text-2xl font-bold leading-tight">El Syifa Thea Salsabila</h3>
+                  <p class="font-serif text-2xl font-bold leading-tight">El Syifa Thea Salsabila</p>
                   <p class="text-xs text-stone-300 mt-0.5">Depok, Jawa Barat, Indonesia</p>
                 </div>
               </div>
@@ -493,8 +534,9 @@
             <p class="text-sm sm:text-base font-semibold text-stone-700">AKAD MEDIA CAKRAWALA — Depok, Jawa Barat</p>
 
             <ul class="mt-4 text-xs sm:text-sm text-stone-600 space-y-2.5 list-disc list-outside ml-4 leading-relaxed">
-              <li>Mengelola pengembangan buku secara *end-to-end*, dari tahap pencarian naskah (*author sourcing*) dan
-                penawaran (*pitching*), penyusunan proposal, penyuntingan, pra-cetak, hingga pemantauan pascapublikasi.
+              <li>Mengelola pengembangan buku secara <em>end-to-end</em>, dari tahap pencarian naskah (<em>author
+                  sourcing</em>) dan penawaran (<em>pitching</em>), penyusunan proposal, penyuntingan, pra-cetak, hingga
+                pemantauan pascapublikasi.
               </li>
               <li>Berkontribusi langsung pada kesuksesan komersial buku-buku seperti <strong>Romansa Opium</strong>,
                 <strong>Cross The Line</strong>, dan <strong>5 Langkah</strong> dengan capaian sekitar <strong>2.000
@@ -502,16 +544,16 @@
               </li>
               <li>Mengordinasikan penulis, proofreader, layouter, tim desainer, tim promosi, dan kolaborator lintas
                 fungsi untuk menjaga standar publikasi tetap prima.</li>
-              <li>Menyusun *editorial timelines* dan memantau tenggat waktu proyek di berbagai judul naskah yang aktif
-                secara simultan.</li>
-              <li>Mengembangkan *creative briefs* untuk ilustrasi sampul, ilustrasi karakter interior, serta merchandise
-                eksklusif bekerja sama dengan penulis dan manajemen.</li>
-              <li>Menyunting naskah, mengordinasikan proofreading, tata letak (*layout*), dan melakukan *final quality
-                control* sebelum naskah masuk ke percetakan.</li>
+              <li>Menyusun <em>editorial timelines</em> dan memantau tenggat waktu proyek di berbagai judul naskah yang
+                aktif secara simultan.</li>
+              <li>Mengembangkan <em>creative briefs</em> untuk ilustrasi sampul, ilustrasi karakter interior, serta
+                merchandise eksklusif bekerja sama dengan penulis dan manajemen.</li>
+              <li>Menyunting naskah, mengordinasikan proofreading, tata letak (<em>layout</em>), dan melakukan <em>final
+                  quality control</em> sebelum naskah masuk ke percetakan.</li>
               <li>Mendukung operasional penerbitan termasuk aplikasi ISBN, koordinasi pesanan cetak, aktivitas promosi,
                 dan pemantauan angka penjualan.</li>
-              <li>Mendampingi promosi dan acara buku, termasuk jadwal *book-tour* yang mencakup 4 kota dalam 2 hari.
-              </li>
+              <li>Mendampingi promosi dan acara buku, termasuk jadwal <em>book-tour</em> yang mencakup 4 kota dalam 2
+                hari.</li>
               <li>Menjaga ritme produksi naskah 1–2 buku per bulan (sekitar 20–24 judul buku per tahun).</li>
             </ul>
           </div>
@@ -532,7 +574,7 @@
 
             <ul class="mt-3 text-xs sm:text-sm text-stone-600 space-y-2 list-disc list-outside ml-4 leading-relaxed">
               <li>Menyunting naskah buku dari segi ketepatan tata bahasa, keluwesan struktur kalimat, konsistensi
-                cerita, keterbacaan (*readability*), dan standar mutu editorial.</li>
+                cerita, keterbacaan (<em>readability</em>), dan standar mutu editorial.</li>
               <li>Berkolaborasi erat dengan tim penerbitan untuk memenuhi kriteria publikasi.</li>
               <li>Menyelesaikan penyuntingan sekitar 1 buku per bulan selama masa penugasan.</li>
             </ul>
@@ -555,7 +597,7 @@
             <ul class="mt-3 text-xs sm:text-sm text-stone-600 space-y-2 list-disc list-outside ml-4 leading-relaxed">
               <li>Mewawancarai pimpinan universitas, dosen, dan staf, termasuk Rektor dan jajaran pejabat tinggi
                 universitas.</li>
-              <li>Melakukan riset mendalam dan menulis artikel profil untuk majalah resmi *UMagazine*,
+              <li>Melakukan riset mendalam dan menulis artikel profil untuk majalah resmi <em>UMagazine</em>,
                 mentransformasikan hasil wawancara menjadi konten feature bernilai baca tinggi.</li>
               <li>Memproduksi 1 artikel profil komprehensif setiap minggu selama program magang berlangsung.</li>
             </ul>
@@ -685,7 +727,7 @@
 
         <!-- View 1: Raw Draft Box -->
         <div id="snippet-raw"
-          class="bg-stone-800/90 border border-stone-700/80 rounded-2xl p-7 sm:p-9 shadow-xl flex flex-col justify-between">
+          class="hidden bg-stone-800/90 border border-stone-700/80 rounded-2xl p-7 sm:p-9 shadow-xl flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex items-center justify-between pb-3.5 border-b border-stone-700 text-xs">
               <span class="text-rose-400 font-semibold flex items-center gap-2">
@@ -711,14 +753,14 @@
           <div class="mt-8 p-4 rounded-xl bg-rose-950/40 border border-rose-900/60 text-xs text-rose-200 space-y-1.5">
             <p class="font-bold text-rose-300">Catatan Diagnostik Editor:</p>
             <p>• Redundansi jamak: *"sangat deras sekali"*, *"sepatah katapun yang terucap dari mulutnya"*.</p>
-            <p>• Kurang *showing* (hanya menceritakan tokoh merasa sedih tanpa membangun suasana indrawi).</p>
+            <p>• Kurang <em>showing</em> (hanya menceritakan tokoh merasa sedih tanpa membangun suasana indrawi).</p>
             <p>• Ejaan PUEBI: *"katapun"* (seharusnya terpisah: *"kata pun"*).</p>
           </div>
         </div>
 
         <!-- View 2: Polished Version Box -->
         <div id="snippet-edited"
-          class="bg-stone-850 bg-stone-800 border border-amber-500/30 rounded-2xl p-7 sm:p-9 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          class="bg-stone-800 border border-amber-500/30 rounded-2xl p-7 sm:p-9 shadow-2xl flex flex-col justify-between relative overflow-hidden">
           <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none">
           </div>
 
@@ -746,7 +788,7 @@
           <div
             class="mt-8 p-4 rounded-xl bg-emerald-950/40 border border-emerald-900/60 text-xs text-emerald-200 space-y-1.5 relative z-10">
             <p class="font-bold text-emerald-300">Dampak Transformasi:</p>
-            <p>• Bahasa indrawi yang menggugah empati dan memperkuat pendekatan *show, don't tell*.</p>
+            <p>• Bahasa indrawi yang menggugah empati dan memperkuat pendekatan <em>show, don't tell</em>.</p>
             <p>• Ritme kalimat kadensial yang mengalir alami tanpa mengubah maksud orisinal cerita.</p>
             <p>• Kepatuhan penuh pada kaidah ejaan PUEBI/EYD yang luwes dan berkelas.</p>
           </div>
@@ -770,7 +812,7 @@
 
       <div class="bg-white p-8 sm:p-12 rounded-3xl border border-stone-200/90 shadow-sm relative overflow-hidden">
         <div
-          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-b border-stone-150 pb-8">
+          class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-b border-stone-200 pb-8">
           <div>
             <span class="text-xs font-semibold text-terracotta uppercase tracking-wider">Sarjana Pendidikan
               (S.Pd.)</span>
@@ -846,7 +888,7 @@
           </div>
           <p class="text-xs text-stone-500 font-medium">WhatsApp / Telepon</p>
           <p class="text-base font-bold text-stone-900 mt-0.5">0812-1668-1744</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-600">Kirim Pesan &rarr;</span>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Kirim Pesan &rarr;</span>
         </a>
 
         <!-- Email -->
@@ -888,12 +930,14 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Book Detail Modal (Pop-up) -->
   <div id="book-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
-    <div
+    <div id="book-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="book-modal-title" tabindex="-1"
       class="bg-white rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative overflow-y-auto max-h-[90vh]">
       <!-- Close Button -->
-      <button onclick="closeBookModal()"
+      <button onclick="closeBookModal()" aria-label="Tutup detail buku"
         class="absolute top-4 right-4 text-stone-400 hover:text-stone-700 p-1.5 rounded-lg hover:bg-stone-100 transition-colors">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
@@ -914,7 +958,7 @@
         </div>
         <div>
           <p class="font-serif text-base font-bold text-stone-200">El Syifa Thea Salsabila</p>
-          <p class="text-stone-500">Editor Naskah Buku &amp; Spesialis Penerbitan • Depok, Indonesia</p>
+          <p class="text-stone-400">Editor Naskah Buku &amp; Spesialis Penerbitan • Depok, Indonesia</p>
         </div>
       </div>
 
@@ -922,8 +966,8 @@
         "Menghidupkan cerita, menyempurnakan setiap helai kata."
       </div>
 
-      <div class="text-stone-500 text-center sm:text-right">
-        &copy; 2025 El Syifa Thea Salsabila. All rights reserved.
+      <div class="text-stone-400 text-center sm:text-right">
+        &copy; <span id="footer-year">2026</span> El Syifa Thea Salsabila. All rights reserved.
       </div>
     </div>
   </footer>
