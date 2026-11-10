@@ -123,6 +123,7 @@ const bookData = [
 document.addEventListener("DOMContentLoaded", () => {
   renderPortfolio("all");
   setupEventListeners();
+  initPhotoSlider();
   if (window.lucide) {
     lucide.createIcons();
   }
@@ -340,4 +341,144 @@ function closeBookModal() {
     modal.classList.add("hidden");
     document.body.style.overflow = "auto";
   }
+}
+
+// Slider Foto Profil Interaktif (Carousel)
+function initPhotoSlider() {
+  const slider = document.getElementById("photo-slider");
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll(".photo-slide");
+  const prevBtn = document.getElementById("slider-prev");
+  const nextBtn = document.getElementById("slider-next");
+  const dotsContainer = document.getElementById("slider-dots");
+  const counterCurrent = document.getElementById("slider-counter-current");
+  const counterTotal = document.getElementById("slider-counter-total");
+
+  if (!slides.length) return;
+
+  let currentIdx = 0;
+  let autoSlideTimer = null;
+
+  // Setup Indikator Titik (Dots)
+  if (dotsContainer) {
+    dotsContainer.innerHTML = "";
+    slides.forEach((_, idx) => {
+      const dot = document.createElement("button");
+      dot.setAttribute("type", "button");
+      dot.setAttribute("aria-label", `Pindah ke foto ${idx + 1}`);
+      dot.className = `h-2 rounded-full transition-all duration-300 ${
+        idx === 0 ? "bg-amber-300 w-5" : "bg-white/40 hover:bg-white/70 w-2"
+      }`;
+      dot.addEventListener("click", () => {
+        goToSlide(idx);
+        resetAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    });
+  }
+
+  if (counterTotal) {
+    counterTotal.textContent = slides.length;
+  }
+
+  function updateSlider() {
+    slides.forEach((slide, idx) => {
+      if (idx === currentIdx) {
+        slide.classList.remove("opacity-0", "pointer-events-none", "z-0");
+        slide.classList.add("opacity-100", "z-10");
+      } else {
+        slide.classList.remove("opacity-100", "z-10");
+        slide.classList.add("opacity-0", "pointer-events-none", "z-0");
+      }
+    });
+
+    // Update Tampilan Dots
+    if (dotsContainer) {
+      const dots = dotsContainer.querySelectorAll("button");
+      dots.forEach((dot, idx) => {
+        if (idx === currentIdx) {
+          dot.className = "w-5 h-2 rounded-full bg-amber-300 transition-all duration-300 shadow-sm";
+        } else {
+          dot.className = "w-2 h-2 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300";
+        }
+      });
+    }
+
+    if (counterCurrent) {
+      counterCurrent.textContent = currentIdx + 1;
+    }
+  }
+
+  function goToSlide(idx) {
+    currentIdx = (idx + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  function nextSlide() {
+    goToSlide(currentIdx + 1);
+  }
+
+  function prevSlide() {
+    goToSlide(currentIdx - 1);
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextSlide();
+      resetAutoSlide();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevSlide();
+      resetAutoSlide();
+    });
+  }
+
+  // Dukungan Swipe Layar Sentuh (Mobile Touch)
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  slider.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  slider.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 40) {
+      if (diff < 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      resetAutoSlide();
+    }
+  }
+
+  // Otomatis Bergeser Lembut (Bisa dijeda saat mouse menyorot foto)
+  function startAutoSlide() {
+    if (slides.length > 1) {
+      autoSlideTimer = setInterval(nextSlide, 5000);
+    }
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideTimer);
+    startAutoSlide();
+  }
+
+  slider.addEventListener("mouseenter", () => clearInterval(autoSlideTimer));
+  slider.addEventListener("mouseleave", () => startAutoSlide());
+
+  updateSlider();
+  startAutoSlide();
 }
