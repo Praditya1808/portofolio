@@ -532,14 +532,16 @@ function initPhotoSlider() {
   startAutoSlide();
 }
 
-// Active Scrollspy untuk Navbar
+// Active Scrollspy untuk Navbar & Tombol Kembali ke Atas
 function setupScrollSpy() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll("header nav a[href^='#']");
+  const backToTopBtn = document.getElementById("back-to-top");
 
   window.addEventListener("scroll", () => {
     let scrollPos = window.scrollY + 120;
 
+    // Scrollspy active highlight
     sections.forEach(sec => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;
@@ -557,5 +559,22 @@ function setupScrollSpy() {
         });
       }
     });
+
+    // Floating Back to Top Button visibility
+    if (backToTopBtn) {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+        backToTopBtn.classList.add("opacity-100", "translate-y-0");
+      } else {
+        backToTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+        backToTopBtn.classList.remove("opacity-100", "translate-y-0");
+      }
+    }
   });
+
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 }
