@@ -704,7 +704,7 @@ function openBookModal(id) {
             <div>
               <h3 class="text-[11px] uppercase font-bold tracking-wider text-stone-500 mb-1">Blurb:</h3>
               <p class="text-sm text-stone-700 leading-relaxed italic bg-[#FAF7F2] p-3 rounded-lg border-l-4 border-[#A34E2E]">
-                "${book.synopsis}"
+                ${book.synopsis}
               </p>
             </div>
 
