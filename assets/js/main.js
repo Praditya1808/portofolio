@@ -100,6 +100,37 @@ const bookData = [
     ]
   },
   {
+    id: 8,
+    title: "Through The Flower Shop Window",
+    publisher: "Akad Media Cakrawala",
+    year: "2026",
+    role: "Ghostwriter & Layout Designer",
+    badge: "Lotus",
+    category: "fiksi-komersial",
+    categoryLabel: "Novel Komik & Fiksi Komersial",
+    wideGallery: true,
+    coverBg: "from-sky-950 via-slate-900 to-teal-950",
+    coverAccent: "text-sky-200",
+    coverPattern: "☂️",
+    images: [
+      "assets/images/books/Lotus.jpeg"
+    ],
+    manuscript: {
+      sampleUrl: "",
+      sampleLabel: "Baca Sampel",
+      fullUrl: "",
+      fullLabel: "Minta Akses Naskah",
+      accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
+    },
+    synopsis: "ini nanti isi synopsisnya, tapi belum ada karena ini proyek baru. nanti akan diisi setelah naskahnya selesai dan siap untuk dipublikasikan.",
+    highlights: [
+      "Menulis naskah komik (ghostwriting) berdasarkan konsep cerita dan arahan kreatif penerbit.",
+      "Menata layout halaman, alur panel, balon dialog, dan tipografi agar nyaman dibaca.",
+      "Menjaga konsistensi alur, karakter, dan gaya bahasa sepanjang volume.",
+      "Menyiapkan berkas layout final dan memastikan hasilnya siap masuk percetakan."
+    ]
+  },
+  {
     id: 4,
     title: "Proyek Naskah Fiksi Kontemporer",
     publisher: "Butterflies Books",
@@ -158,7 +189,9 @@ const bookData = [
       "Menulis dan menyunting naskah berita dengan kepatuhan tinggi pada kaidah jurnalistik dan PUEBI.",
       "Menjaga konsistensi rilis berita institusi secara berkala (1 artikel per minggu)."
     ]
-  }
+  },
+  
+
 ];
 
 // Inisialisasi Utama
