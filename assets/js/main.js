@@ -57,8 +57,6 @@ const bookData = [
     coverAccent: "text-amber-200",
     coverPattern: "👣",
     images: [
-      "assets/images/books/5-langkah-1.jpg",
-      "assets/images/books/5-langkah-2.jpg",
       "assets/images/books/5-langkah-3.jpg"
     ],
     synopsis: "Kisah menyentuh tentang proses penyembuhan diri, memaafkan luka masa lalu, dan langkah-langkah krusial menuju pendewasaan.",
