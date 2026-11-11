@@ -200,6 +200,7 @@ function startApp() {
   renderPortfolio("all");
   setupEventListeners();
   initPhotoSlider();
+  initEditorialPreview();
   setupScrollSpy();
 
   const yearEl = document.getElementById("footer-year");
@@ -422,6 +423,114 @@ function setupEventListeners() {
 
     applyView("edited");
   }
+}
+
+// Preview naskah: fallback saat foto belum tersedia + lightbox.
+let lastEditorialFocusedElement = null;
+
+function handleEditorialImageError(img) {
+  const preview = img.closest("[data-editorial-preview]");
+  if (!preview) return;
+  preview.classList.add("is-missing");
+  preview.disabled = true;
+  preview.setAttribute("aria-label", "Preview naskah belum tersedia");
+
+  const placeholder = preview.querySelector(".editorial-placeholder");
+  if (placeholder) {
+    placeholder.classList.remove("hidden");
+    placeholder.classList.add("flex");
+  }
+}
+
+function openEditorialPreview(trigger) {
+  const preview = trigger.closest("[data-editorial-preview]");
+  const image = preview ? preview.querySelector("img") : null;
+  if (!preview || preview.classList.contains("is-missing") || !image || !image.naturalWidth) return;
+
+  const lightbox = document.getElementById("editorial-lightbox");
+  const lightboxImage = document.getElementById("editorial-lightbox-image");
+  const dialog = document.getElementById("editorial-lightbox-dialog");
+  if (!lightbox || !lightboxImage || !dialog) return;
+
+  const title = preview.dataset.previewTitle || "Preview Naskah";
+  const eyebrow = preview.dataset.previewEyebrow || "Preview";
+
+  document.getElementById("editorial-lightbox-title").textContent = title;
+  document.getElementById("editorial-lightbox-eyebrow").textContent = eyebrow;
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt || title;
+
+  lastEditorialFocusedElement = trigger;
+
+  lightbox.classList.remove("hidden");
+  lightbox.classList.add("flex");
+  document.body.style.overflow = "hidden";
+
+  if (window.lucide) lucide.createIcons();
+  dialog.focus();
+}
+
+function closeEditorialPreview() {
+  const lightbox = document.getElementById("editorial-lightbox");
+  if (!lightbox || lightbox.classList.contains("hidden")) return;
+
+  lightbox.classList.add("hidden");
+  lightbox.classList.remove("flex");
+
+  const lightboxImage = document.getElementById("editorial-lightbox-image");
+  if (lightboxImage) {
+    lightboxImage.removeAttribute("src");
+    lightboxImage.alt = "";
+  }
+
+  document.body.style.overflow = "";
+
+  if (lastEditorialFocusedElement && typeof lastEditorialFocusedElement.focus === "function") {
+    lastEditorialFocusedElement.focus();
+  }
+  lastEditorialFocusedElement = null;
+}
+
+function initEditorialPreview() {
+  const lightbox = document.getElementById("editorial-lightbox");
+  if (!lightbox) return;
+
+  document.querySelectorAll("[data-editorial-preview] img").forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) {
+      handleEditorialImageError(img);
+    } else {
+      img.addEventListener("error", () => handleEditorialImageError(img), { once: true });
+    }
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeEditorialPreview();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.classList.contains("hidden")) {
+      closeEditorialPreview();
+    }
+  });
+
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+
+    const dialog = document.getElementById("editorial-lightbox-dialog");
+    const focusables = dialog ? dialog.querySelectorAll('a[href], button:not([disabled])') : [];
+    if (!focusables.length) return;
+
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
 }
 
 // Escape teks sebelum masuk ke markup modal.

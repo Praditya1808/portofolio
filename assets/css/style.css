@@ -94,6 +94,17 @@ body {
   }
 }
 
+/* Preview naskah: sembunyikan elemen foto saat file belum tersedia */
+[data-editorial-preview].is-missing img,
+[data-editorial-preview].is-missing .editorial-preview-hint {
+  display: none;
+}
+
+#editorial-lightbox-dialog:focus,
+#editorial-lightbox-dialog:focus-visible {
+  outline: none;
+}
+
 /* On desktop, always show both Before & After boxes side-by-side */
 @media (min-width: 1024px) {
   #snippet-raw,

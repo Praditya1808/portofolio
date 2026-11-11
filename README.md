@@ -73,6 +73,17 @@ Buka browser dan akses alamat: `http://localhost:3000`
    - Untuk naskah penuh, atur akses Google Drive ke **Viewer**, lalu matikan
      unduh/cetak/salin. Uji tautan di jendela incognito sebelum dipublikasikan.
 
+5. **Mengganti Foto Preview Naskah (Sebelum vs. Sesudah)**:
+   - Bagian “Sentuhan Editorial” sekarang memakai foto preview, bukan teks panjang.
+   - Ganti dua file ini dengan foto halaman naskah asli:
+     - `assets/images/editorial/draf-mentah.jpg`
+     - `assets/images/editorial/hasil-suntingan.jpg`
+   - Gunakan foto portrait, lebar minimal 1000 px, ukuran ideal di bawah 300 KB.
+   - Foto otomatis dipotong dari bagian atas di dalam kotak. Klik foto untuk
+     membuka tampilan penuh (lightbox).
+   - Jika file belum ada, kotak menampilkan placeholder “Preview naskah belum tersedia”.
+   - Detail ada di `assets/images/editorial/README.md`.
+
 ---
 
 ## 🌐 Cara Publikasi / Deploy ke Internet (Gratis)

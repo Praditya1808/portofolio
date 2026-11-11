@@ -669,10 +669,10 @@
   </section>
 
   <!-- Side-by-Side Interactive Before & After Editorial Section -->
-  <section id="sentuhan-editor" class="py-24 bg-stone-900 text-stone-100 relative overflow-hidden">
-    <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+  <!-- <section id="sentuhan-editor" class="py-24 bg-stone-900 text-stone-100 relative overflow-hidden">
+    <div class="max-w-[1400px] w-full mx-auto px-6 sm:px-8 lg:px-12 relative z-10"> -->
 
-      <div class="text-center max-w-2xl mx-auto mb-16">
+      <!-- <div class="text-center max-w-2xl mx-auto mb-16">
         <span class="text-xs uppercase font-bold tracking-widest text-amber-400">Interaktif • The Editorial Eye</span>
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mt-1.5">
           Sentuhan Editorial: Sebelum vs. Sesudah
@@ -680,10 +680,10 @@
         <p class="text-stone-400 text-sm sm:text-base mt-2.5">
           Lihat perbandingan langsung bagaimana kepekaan bahasa dan analisis ritme mengubah draf mentah menjadi naskah
           yang matang, berdaya pikat emosional, dan patuh standar kebahasaan.
-        </p>
+        </p> -->
 
         <!-- Mobile Toggle Switch (shown only on small screens) -->
-        <div
+        <!-- <div
           class="lg:hidden inline-flex p-1 rounded-xl bg-stone-800 border border-stone-700 mt-6 text-xs font-semibold">
           <button data-target="raw"
             class="preview-toggle-btn px-5 py-2 rounded-lg text-stone-400 hover:text-white transition-all">
@@ -694,13 +694,13 @@
             Hasil Suntingan ✨
           </button>
         </div>
-      </div>
+      </div> -->
 
       <!-- Desktop Side-by-Side Comparison Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+      <!-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch"> -->
 
         <!-- View 1: Raw Draft Box -->
-        <div id="snippet-raw"
+        <!-- <div id="snippet-raw"
           class="hidden bg-stone-800/90 border border-stone-700/80 rounded-2xl p-7 sm:p-9 shadow-xl flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex items-center justify-between pb-3.5 border-b border-stone-700 text-xs">
@@ -708,32 +708,47 @@
                 <i data-lucide="alert-circle" class="w-4 h-4"></i> Draf Mentah Penulis
               </span>
               <span class="text-stone-400 font-medium">Sebelum Disunting</span>
-            </div>
+            </div> -->
 
-            <div class="font-serif text-lg sm:text-xl leading-relaxed text-stone-300 space-y-3.5">
-              <p>
-                Hujan turun sangat deras sekali membasahi kaca jendela kamarnya. Dia merasa sangat sedih dan bingung
-                kenapa laki-laki itu meninggalkannya begitu saja kemarin sore tanpa ada ucapan sepatah katapun yang
-                terucap dari mulutnya.
-              </p>
-              <p>
-                Kala itu dia memegang cangkir kopi yang sudah dingin dengan tangannya yang bergetar hebat. Di dalam
-                hatinya dia bertanya-tanya, apakah cinta yang selama ini mereka bina berdua hanyalah sebuah kebohongan
-                belaka?
-              </p>
-            </div>
-          </div>
+            <!-- <button type="button" data-editorial-preview
+              data-preview-eyebrow="Sebelum Disunting" data-preview-title="Draf Mentah Penulis"
+              onclick="openEditorialPreview(this)" aria-haspopup="dialog"
+              aria-label="Perbesar preview draf mentah penulis"
+              class="group relative block w-full overflow-hidden rounded-xl border border-stone-700 bg-stone-950 text-left transition-colors hover:border-rose-400/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-800 disabled:cursor-default">
+              <span class="block aspect-[5/4] w-full overflow-hidden"> -->
+                <!-- Ganti file ini dengan foto halaman draf mentah (JPG/WebP, sisi terpanjang ±1600 px). -->
+                <!-- <img src="assets/images/editorial/draf-mentah.jpg" alt="Preview halaman draf mentah naskah sebelum disunting"
+                  loading="lazy" decoding="async"
+                  class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+              </span> -->
 
-          <div class="mt-8 p-4 rounded-xl bg-rose-950/40 border border-rose-900/60 text-xs text-rose-200 space-y-1.5">
+              <!-- <span class="editorial-placeholder absolute inset-0 hidden flex-col items-center justify-center gap-2.5 p-6 text-center">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full border border-stone-700 bg-stone-800/80 text-stone-400">
+                  <i data-lucide="image" class="h-5 w-5"></i>
+                </span>
+                <span class="text-sm font-medium text-stone-300">Preview naskah belum tersedia</span>
+                <span class="max-w-[17rem] text-xs leading-relaxed text-stone-500">Tambahkan foto halaman naskah untuk menampilkan preview di sini.</span>
+              </span> -->
+
+              <!-- <span class="editorial-preview-hint absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent px-4 pb-3 pt-10 text-[11px] font-medium text-stone-200">
+                <span class="inline-flex items-center gap-1.5">
+                  <i data-lucide="maximize-2" class="h-3.5 w-3.5 text-rose-300"></i> Klik untuk memperbesar
+                </span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-stone-400">Draf</span>
+              </span>
+            </button>
+          </div> -->
+
+          <!-- <div class="mt-8 p-4 rounded-xl bg-rose-950/40 border border-rose-900/60 text-xs text-rose-200 space-y-1.5">
             <p class="font-bold text-rose-300">Catatan Diagnostik Editor:</p>
             <p>• Redundansi jamak: *"sangat deras sekali"*, *"sepatah katapun yang terucap dari mulutnya"*.</p>
             <p>• Kurang <em>showing</em> (hanya menceritakan tokoh merasa sedih tanpa membangun suasana indrawi).</p>
             <p>• Ejaan PUEBI: *"katapun"* (seharusnya terpisah: *"kata pun"*).</p>
           </div>
-        </div>
+        </div> -->
 
         <!-- View 2: Polished Version Box -->
-        <div id="snippet-edited"
+        <!-- <div id="snippet-edited"
           class="bg-stone-800 border border-amber-500/30 rounded-2xl p-7 sm:p-9 shadow-2xl flex flex-col justify-between relative overflow-hidden">
           <div class="absolute -right-12 -top-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl pointer-events-none">
           </div>
@@ -744,22 +759,38 @@
                 <i data-lucide="check-circle-2" class="w-4 h-4"></i> Sentuhan Editorial El Syifa
               </span>
               <span class="text-amber-300 font-medium">Hasil Penyuntingan</span>
-            </div>
+            </div> -->
 
-            <div class="font-serif text-lg sm:text-xl leading-relaxed text-stone-100 space-y-3.5">
-              <p>
-                Hujan menghantam kaca jendela tanpa jeda. Di sudut kamar yang sunyi, ia membiarkan dingin cangkir kopi
-                merambat ke jemarinya yang masih gemetar. Kepergian lelaki itu kemarin sore tak menyisakan apa pun
-                selain sunyi yang menusuk—bahkan tak ada satu patah kata pun yang sempat dilepaskan ke udara.
-              </p>
-              <p>
-                Di hadapan sisa pekat kopi yang mengendap, sebuah tanya terus mengoyak dadanya: adakah masa lalu yang
-                mereka bangun bersama sungguh-sungguh bernyawa, ataukah sekadar ilusi yang rapuh?
-              </p>
-            </div>
-          </div>
+            <!-- <button type="button" data-editorial-preview
+              data-preview-eyebrow="Hasil Penyuntingan" data-preview-title="Sentuhan Editorial El Syifa"
+              onclick="openEditorialPreview(this)" aria-haspopup="dialog"
+              aria-label="Perbesar preview hasil suntingan El Syifa"
+              class="group relative block w-full overflow-hidden rounded-xl border border-stone-700 bg-stone-950 text-left transition-colors hover:border-amber-400/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-800 disabled:cursor-default">
+              <span class="block aspect-[5/4] w-full overflow-hidden"> -->
+                <!-- Ganti file ini dengan foto halaman naskah hasil suntingan (JPG/WebP, sisi terpanjang ±1600 px). -->
+                <!-- <img src="assets/images/editorial/hasil-suntingan.jpg" alt="Preview halaman naskah hasil penyuntingan El Syifa"
+                  loading="lazy" decoding="async"
+                  class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+              </span> -->
 
-          <div
+              <!-- <span class="editorial-placeholder absolute inset-0 hidden flex-col items-center justify-center gap-2.5 p-6 text-center">
+                <span class="flex h-11 w-11 items-center justify-center rounded-full border border-stone-700 bg-stone-800/80 text-stone-400">
+                  <i data-lucide="image" class="h-5 w-5"></i>
+                </span>
+                <span class="text-sm font-medium text-stone-300">Preview naskah belum tersedia</span>
+                <span class="max-w-[17rem] text-xs leading-relaxed text-stone-500">Tambahkan foto halaman naskah untuk menampilkan preview di sini.</span>
+              </span> -->
+
+              <!-- <span class="editorial-preview-hint absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent px-4 pb-3 pt-10 text-[11px] font-medium text-stone-200">
+                <span class="inline-flex items-center gap-1.5">
+                  <i data-lucide="maximize-2" class="h-3.5 w-3.5 text-amber-300"></i> Klik untuk memperbesar
+                </span>
+                <span class="font-mono text-[10px] uppercase tracking-wider text-stone-400">Suntingan</span>
+              </span>
+            </button>
+          </div> -->
+
+          <!-- <div
             class="mt-8 p-4 rounded-xl bg-emerald-950/40 border border-emerald-900/60 text-xs text-emerald-200 space-y-1.5 relative z-10">
             <p class="font-bold text-emerald-300">Dampak Transformasi:</p>
             <p>• Bahasa indrawi yang menggugah empati dan memperkuat pendekatan <em>show, don't tell</em>.</p>
@@ -771,7 +802,7 @@
       </div>
 
     </div>
-  </section>
+  </section> -->
 
   <!-- Education Section -->
   <section id="edukasi" class="py-24">
@@ -918,6 +949,30 @@
 
       <!-- Dynamic Content Injection -->
       <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Preview Naskah (lightbox) -->
+  <div id="editorial-lightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-3 modal-backdrop sm:p-6"
+    role="dialog" aria-modal="true" aria-labelledby="editorial-lightbox-title">
+    <div id="editorial-lightbox-dialog" tabindex="-1"
+      class="relative flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-stone-900 shadow-2xl">
+      <div class="flex items-start justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-5">
+        <div class="min-w-0">
+          <p id="editorial-lightbox-eyebrow"
+            class="text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-300"></p>
+          <h2 id="editorial-lightbox-title" class="font-serif text-lg font-bold leading-tight text-white sm:text-xl">
+          </h2>
+        </div>
+        <button type="button" onclick="closeEditorialPreview()" aria-label="Tutup preview naskah"
+          class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-stone-300 transition-colors hover:bg-white/10 hover:text-white">
+          <i data-lucide="x" class="h-4 w-4"></i>
+        </button>
+      </div>
+      <div class="min-h-0 flex-1 overflow-auto bg-stone-950 p-2 sm:p-4">
+        <img id="editorial-lightbox-image" src="" alt=""
+          class="mx-auto max-h-[70vh] w-auto max-w-full object-contain">
+      </div>
     </div>
   </div>
 
