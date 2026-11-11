@@ -17,7 +17,7 @@ const bookData = [
     images: ["assets/images/books/romansa-opium-1.jpg"],
     synopsis: "Johanne Van der Meer telah berjanji pada dirinya sendiri untuk bersiap diri menanggung dosa demi kekuasaan yang telah terjanjikan. Namun siapa sangka, dalam perjalanan yang penuh dengan warna hitam, ia justru bertemu sosok Jayantaka yang sehangat dan secerah matahari pagi. Dalam pergulatan jiwa, Johanne harus memutuskan sebuah pilihan yang akan mengubah sisi pandang hidupnya. Di manakah hati Johanne akan berlabuh? Kekuasaan atau sebuah kehangatan?",
     highlights: [
-      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi dan memastikan proses editorial serta produksi selesai sesuai timeline.",
       "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
       "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
       "Menyunting konten dan tanda baca (editing) pada naskah.",
@@ -39,7 +39,7 @@ const bookData = [
     images: ["assets/images/books/cross-the-line-1.jpg"],
     synopsis: "Berawal dari salah mengirim pesan, Gia Kahlani—seorang auditor dari Kantor Akuntan Publik (KAP) Tanuredja & Partners, budak korporat yang ingin menjalani kehidupan kantor tanpa banyak drama, mendadak harus berurusan dengan Reno, presdir dari perusahaan yang merekrutnya. Mereka menjadi dekat lewat kebetulan-kebetulan kecil. Sering bertemu karena urusan pekerjaan, membuat keduanya perlahan menemukan kenyamanan pada satu sama lain. Sayangnya, ada batas profesionalitas yang tidak boleh mereka lewati. Auditor dan kliennya dilarang memiliki hubungan pribadi demi tidak memengaruhi opini dalam laporan audit. Kemudian ke manakah mereka akan membawa pergi perasan yang tumbuh tanpa terkendali?",
     highlights: [
-      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi dan memastikan proses editorial serta produksi selesai sesuai timeline.",
       "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
       "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
       "Menyunting dan mengembangkan naskah secara mendalam dan menyeluruh.",
@@ -63,7 +63,7 @@ const bookData = [
     ],
     synopsis: "Keenan, Sean, dan Sasa adalah tiga sahabat yang tumbuh bersama sejak kecil dan percaya bahwa persahabatan mereka akan selalu berjalan sama. Namun, ketika memasuki masa remaja, berbagai konflik seperti cinta pertama, serta impian yang membawa mereka ke jalan berbeda, perlahan menguji ikatan tersebut. Melalui setiap pertengkaran, kehilangan, dan proses bertumbuh, mereka belajar bahwa menjadi dewasa bukan berarti berhenti berjalan bersama. Karena kehidupan dewasa mengajarkan untuk selalu mengambil langkah kembali kepada orang-orang yang mereka anggap rumah. Sama seperti Keenan, Sasa, dan Sean yang selalu berusaha menemukan jalan untuk kembali pada satu sama lain. Cause home isn't always a place. Sometimes, it's people.",
     highlights: [
-      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi dan memastikan proses editorial serta produksi selesai sesuai timeline.",
       "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
       "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
       "Menyunting dan mengembangkan naskah secara mendalam dan menyeluruh.",
