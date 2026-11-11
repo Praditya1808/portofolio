@@ -15,12 +15,13 @@ const bookData = [
     // Foto sampul/dokumentasi. Bisa 1 atau beberapa:
     // images: ["assets/images/books/romansa-opium-1.jpg", "assets/images/books/romansa-opium-2.jpg"]
     images: ["assets/images/books/romansa-opium-1.jpg"],
-    synopsis: "Novel romansa populer yang sukses menarik antusiasme pembaca setia sejak hari pertama pra-pesan, menjadi salah satu judul komersial terlaris penerbit.",
+    synopsis: "Johanne Van der Meer telah berjanji pada dirinya sendiri untuk bersiap diri menanggung dosa demi kekuasaan yang telah terjanjikan. Namun siapa sangka, dalam perjalanan yang penuh dengan warna hitam, ia justru bertemu sosok Jayantaka yang sehangat dan secerah matahari pagi. Dalam pergulatan jiwa, Johanne harus memutuskan sebuah pilihan yang akan mengubah sisi pandang hidupnya. Di manakah hati Johanne akan berlabuh? Kekuasaan atau sebuah kehangatan?",
     highlights: [
-      "Mengawal naskah dari tahap proposal hingga terbit fisik.",
-      "Menajamkan struktur konflik dan alur dinamika hubungan tokoh utama.",
-      "Menyusun creative brief ilustrasi sampul, ilustrasi karakter interior, dan merchandise pre-order.",
-      "Mengawasi proses layout, proofreading, dan pencetakan."
+      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
+      "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
+      "Editing naskah.",
+      "Layouting naskah menggunakan Adobe Indesign."
     ]
   },
   {
@@ -687,7 +688,7 @@ function openBookModal(id) {
 
           <div class="space-y-3.5 mt-4">
             <div>
-              <h3 class="text-[11px] uppercase font-bold tracking-wider text-stone-500 mb-1">Ikhtisar Naskah:</h3>
+              <h3 class="text-[11px] uppercase font-bold tracking-wider text-stone-500 mb-1">Blurb:</h3>
               <p class="text-sm text-stone-700 leading-relaxed italic bg-[#FAF7F2] p-3 rounded-lg border-l-4 border-[#A34E2E]">
                 "${book.synopsis}"
               </p>
