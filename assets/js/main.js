@@ -104,10 +104,10 @@ const bookData = [
     title: "Through The Flower Shop Window",
     publisher: "Akad Media Cakrawala",
     year: "2026",
-    role: "Ghostwriter, Project Coordinator & Layout Designer",
-    badge: "Lotus",
-    category: "fiksi-komersial",
-    categoryLabel: "Novel Komik & Fiksi Komersial",
+    role: "Proofreader, Layouter, & Project Coordinator",
+    badge: "🔥 ~2.000 Pre-Orders Hit",
+    category: "Slice of Life",
+    categoryLabel: "Slice of Life",
     wideGallery: true,
     coverBg: "from-sky-950 via-slate-900 to-teal-950",
     coverAccent: "text-sky-200",
@@ -129,67 +129,68 @@ const bookData = [
       "Menjaga konsistensi alur, karakter, dan gaya bahasa sepanjang volume.",
       "Menyiapkan berkas layout final dan memastikan hasilnya siap masuk percetakan."
     ]
-  },
-  {
-    id: 4,
-    title: "Proyek Naskah Fiksi Kontemporer",
-    publisher: "Butterflies Books",
-    year: "2024",
-    role: "Freelance Manuscript Editor",
-    badge: "Proyek Kurasi",
-    category: "freelance",
-    categoryLabel: "Penyuntingan Naskah Lepas",
-    coverBg: "from-emerald-950 via-stone-900 to-teal-950",
-    coverAccent: "text-emerald-300",
-    coverPattern: "📖",
-    images: [],
-    synopsis: "Penyuntingan manuskrip novel fiksi dengan fokus pada keterbacaan, keharmonisan struktur kalimat, dan standar kualitas publikasi independen.",
-    highlights: [
-      "Menyunting naskah untuk tata bahasa, keluwesan kalimat, dan konsistensi naskah.",
-      "Menuntaskan naskah dengan ritme produksi rata-rata 1 buku per bulan.",
-      "Bekerja sama erat dengan tim penerbit untuk memastikan standar editorial terpenuhi."
-    ]
-  },
-  {
-    id: 5,
-    title: "Liputan Profil UMagazine",
-    publisher: "LP2M UM × Jawa Pos",
-    year: "2023",
-    role: "Journalism Intern & Feature Writer",
-    badge: "Karya Jurnalistik",
-    category: "jurnalistik",
-    categoryLabel: "Jurnalistik & Penulisan Feature",
-    coverBg: "from-stone-800 via-neutral-900 to-amber-950",
-    coverAccent: "text-amber-300",
-    coverPattern: "📰",
-    images: [],
-    synopsis: "Seri penulisan profil tokoh dan artikel feature institusional yang mengangkat kiprah tokoh akademisi dan pengabdian riset universitas.",
-    highlights: [
-      "Mewawancarai tokoh pimpinan universitas termasuk Rektor dan jajaran pejabat tinggi.",
-      "Mengolah materi riset dan wawancara menjadi artikel feature yang komunikatif bagi publik.",
-      "Memproduksi sekitar 1 artikel profil komprehensif per minggu untuk UMagazine."
-    ]
-  },
-  {
-    id: 6,
-    title: "Warta & Berita Sastra",
-    publisher: "Fakultas Sastra Universitas Negeri Malang",
-    year: "2023",
-    role: "Journalism Intern & News Writer",
-    badge: "Publikasi Kampus",
-    category: "jurnalistik",
-    categoryLabel: "Jurnalistik Budaya & Sastra",
-    coverBg: "from-teal-950 via-stone-900 to-slate-900",
-    coverAccent: "text-teal-200",
-    coverPattern: "🖋️",
-    images: [],
-    synopsis: "Liputan kegiatan akademik, perhelatan kebudayaan, dan ulasan sastra untuk portal berita resmi Fakultas Sastra.",
-    highlights: [
-      "Meliput perhelatan sastra, seminar bahasa, dan kunjungan delegasi budaya.",
-      "Menulis dan menyunting naskah berita dengan kepatuhan tinggi pada kaidah jurnalistik dan PUEBI.",
-      "Menjaga konsistensi rilis berita institusi secara berkala (1 artikel per minggu)."
-    ]
-  },
+  }
+  // ,
+  // {
+  //   id: 4,
+  //   title: "Proyek Naskah Fiksi Kontemporer",
+  //   publisher: "Butterflies Books",
+  //   year: "2024",
+  //   role: "Freelance Manuscript Editor",
+  //   badge: "Proyek Kurasi",
+  //   category: "freelance",
+  //   categoryLabel: "Penyuntingan Naskah Lepas",
+  //   coverBg: "from-emerald-950 via-stone-900 to-teal-950",
+  //   coverAccent: "text-emerald-300",
+  //   coverPattern: "📖",
+  //   images: [],
+  //   synopsis: "Penyuntingan manuskrip novel fiksi dengan fokus pada keterbacaan, keharmonisan struktur kalimat, dan standar kualitas publikasi independen.",
+  //   highlights: [
+  //     "Menyunting naskah untuk tata bahasa, keluwesan kalimat, dan konsistensi naskah.",
+  //     "Menuntaskan naskah dengan ritme produksi rata-rata 1 buku per bulan.",
+  //     "Bekerja sama erat dengan tim penerbit untuk memastikan standar editorial terpenuhi."
+  //   ]
+  // },
+  // {
+  //   id: 5,
+  //   title: "Liputan Profil UMagazine",
+  //   publisher: "LP2M UM × Jawa Pos",
+  //   year: "2023",
+  //   role: "Journalism Intern & Feature Writer",
+  //   badge: "Karya Jurnalistik",
+  //   category: "jurnalistik",
+  //   categoryLabel: "Jurnalistik & Penulisan Feature",
+  //   coverBg: "from-stone-800 via-neutral-900 to-amber-950",
+  //   coverAccent: "text-amber-300",
+  //   coverPattern: "📰",
+  //   images: [],
+  //   synopsis: "Seri penulisan profil tokoh dan artikel feature institusional yang mengangkat kiprah tokoh akademisi dan pengabdian riset universitas.",
+  //   highlights: [
+  //     "Mewawancarai tokoh pimpinan universitas termasuk Rektor dan jajaran pejabat tinggi.",
+  //     "Mengolah materi riset dan wawancara menjadi artikel feature yang komunikatif bagi publik.",
+  //     "Memproduksi sekitar 1 artikel profil komprehensif per minggu untuk UMagazine."
+  //   ]
+  // },
+  // {
+  //   id: 6,
+  //   title: "Warta & Berita Sastra",
+  //   publisher: "Fakultas Sastra Universitas Negeri Malang",
+  //   year: "2023",
+  //   role: "Journalism Intern & News Writer",
+  //   badge: "Publikasi Kampus",
+  //   category: "jurnalistik",
+  //   categoryLabel: "Jurnalistik Budaya & Sastra",
+  //   coverBg: "from-teal-950 via-stone-900 to-slate-900",
+  //   coverAccent: "text-teal-200",
+  //   coverPattern: "🖋️",
+  //   images: [],
+  //   synopsis: "Liputan kegiatan akademik, perhelatan kebudayaan, dan ulasan sastra untuk portal berita resmi Fakultas Sastra.",
+  //   highlights: [
+  //     "Meliput perhelatan sastra, seminar bahasa, dan kunjungan delegasi budaya.",
+  //     "Menulis dan menyunting naskah berita dengan kepatuhan tinggi pada kaidah jurnalistik dan PUEBI.",
+  //     "Menjaga konsistensi rilis berita institusi secara berkala (1 artikel per minggu)."
+  //   ]
+  // },
   
 
 ];
