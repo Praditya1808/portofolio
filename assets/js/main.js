@@ -84,8 +84,7 @@ const bookData = [
     coverAccent: "text-sky-200",
     coverPattern: "☂️",
     images: [
-      "assets/images/books/silver-lining-1.jpg",
-      "assets/images/books/silver-lining-2.jpg"
+      "assets/images/books/silver-lining-1.jpg"
     ],
     manuscript: {
       sampleUrl: "https://drive.google.com/file/d/17sXg9zONh934nxNRc_hZ3LGhib8GRVyj/view?usp=sharing",
