@@ -61,12 +61,13 @@ const bookData = [
     images: [
       "assets/images/books/5-langkah-3.jpg"
     ],
-    synopsis: "Kisah menyentuh tentang proses penyembuhan diri, memaafkan luka masa lalu, dan langkah-langkah krusial menuju pendewasaan.",
+    synopsis: "Keenan, Sean, dan Sasa adalah tiga sahabat yang tumbuh bersama sejak kecil dan percaya bahwa persahabatan mereka akan selalu berjalan sama. Namun, ketika memasuki masa remaja, berbagai konflik seperti cinta pertama, serta impian yang membawa mereka ke jalan berbeda, perlahan menguji ikatan tersebut. Melalui setiap pertengkaran, kehilangan, dan proses bertumbuh, mereka belajar bahwa menjadi dewasa bukan berarti berhenti berjalan bersama. Karena kehidupan dewasa mengajarkan untuk selalu mengambil langkah kembali kepada orang-orang yang mereka anggap rumah. Sama seperti Keenan, Sasa, dan Sean yang selalu berusaha menemukan jalan untuk kembali pada satu sama lain. Cause home isn't always a place. Sometimes, it's people.",
     highlights: [
-      "Penyuntingan mendalam pada perkembangan psikologis dan kedalaman emosi karakter.",
-      "Membangun jadwal editorial dan memantau deadline kerja antar tim lintas fungsi.",
-      "Mendukung kegiatan promosi naskah dan rangkaian book tour ke 4 kota.",
-      "Penyelarasan standar kebahasaan EYD dan gaya selingkung penerbit."
+      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
+      "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
+      "Menyunting dan mengembangkan naskah secara mendalam dan menyeluruh.",
+      "Melakukan tata letak (layouting) naskah menggunakan Adobe Indesign."
     ]
   },
   {
