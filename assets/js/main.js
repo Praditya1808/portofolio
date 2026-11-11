@@ -85,10 +85,10 @@ const bookData = [
       "assets/images/books/silver-lining-2.jpg"
     ],
     manuscript: {
-      sampleUrl: "https://drive.google.com/file/d/1m6oa-uBnSTDNc0CVsmANYLe6AiG_nppn/view?usp=sharing",
+      sampleUrl: "https://drive.google.com/file/d/17sXg9zONh934nxNRc_hZ3LGhib8GRVyj/view?usp=sharing",
       sampleLabel: "Baca Sampel",
-      fullUrl: "https://drive.google.com/file/d/17sXg9zONh934nxNRc_hZ3LGhib8GRVyj/view?usp=sharing",
-      fullLabel: "Minta Akses Naskah",
+      // fullUrl: "https://drive.google.com/file/d/17sXg9zONh934nxNRc_hZ3LGhib8GRVyj/view?usp=sharing",
+      // fullLabel: "Minta Akses Naskah",
       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
     },
     synopsis: "Novel komik Vol. 1 karya KIKUATAMA tentang Gaby Athalia Chandramaya, gadis 16 tahun yang terpaksa menjadi \"pembantu\" di rumah mantan sahabatnya yang kini justru menjadi perundungnya. Saat ia hampir menyerah, pertemuannya dengan Vicky Giovano Narawikara perlahan mengubah hidupnya—tentang keberanian bersuara, harga diri, dan cinta.",
