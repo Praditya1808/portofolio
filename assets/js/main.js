@@ -20,8 +20,8 @@ const bookData = [
       "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
       "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
       "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
-      "Editing naskah.",
-      "Layouting naskah menggunakan Adobe Indesign."
+      "Menyunting konten dan tanda baca (editing) pada naskah.",
+      "Melakukan tata letak (layouting) naskah menggunakan Adobe Indesign."
     ]
   },
   {
@@ -37,12 +37,13 @@ const bookData = [
     coverAccent: "text-cyan-300",
     coverPattern: "⚡",
     images: ["assets/images/books/cross-the-line-1.jpg"],
-    synopsis: "Eksplorasi batas tipis antara ambisi masa muda, persahabatan, dan konsekuensi pilihan hidup dengan gaya penceritaan yang intens dan modern.",
+    synopsis: "Berawal dari salah mengirim pesan, Gia Kahlani—seorang auditor dari Kantor Akuntan Publik (KAP) Tanuredja & Partners, budak korporat yang ingin menjalani kehidupan kantor tanpa banyak drama, mendadak harus berurusan dengan Reno, presdir dari perusahaan yang merekrutnya. Mereka menjadi dekat lewat kebetulan-kebetulan kecil. Sering bertemu karena urusan pekerjaan, membuat keduanya perlahan menemukan kenyamanan pada satu sama lain. Sayangnya, ada batas profesionalitas yang tidak boleh mereka lewati. Auditor dan kliennya dilarang memiliki hubungan pribadi demi tidak memengaruhi opini dalam laporan audit. Kemudian ke manakah mereka akan membawa pergi perasan yang tumbuh tanpa terkendali?",
     highlights: [
-      "Menyusun ulang ritme (pacing) narasi babak tengah agar tensi cerita tetap terjaga.",
-      "Menyelaraskan dialog khas anak muda agar terdengar alami dan tidak kaku.",
-      "Mengarahkan visualisasi karakter bersama tim ilustrator.",
-      "Koordinasi quality control akhir sebelum berkas masuk ke percetakan."
+      "Koordinasi dan memastikan proses editorial dan produksi selesai sesuai timeline.",
+      "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
+      "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
+      "Menyunting dan mengembangkan naskah secara mendalam dan menyeluruh.",
+      "Melakukan tata letak (layouting) naskah menggunakan Adobe Indesign."
     ]
   },
   {
