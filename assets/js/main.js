@@ -94,12 +94,22 @@ const bookData = [
       // fullLabel: "Minta Akses Naskah",
       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
     },
-    synopsis: "Novel komik Vol. 1 karya KIKUATAMA tentang Gaby Athalia Chandramaya, gadis 16 tahun yang terpaksa menjadi \"pembantu\" di rumah mantan sahabatnya yang kini justru menjadi perundungnya. Saat ia hampir menyerah, pertemuannya dengan Vicky Giovano Narawikara perlahan mengubah hidupnya—tentang keberanian bersuara, harga diri, dan cinta.",
-    highlights: [
-      "Menulis naskah komik (ghostwriting) berdasarkan konsep cerita dan arahan kreatif penerbit.",
-      "Menata layout halaman, alur panel, balon dialog, dan tipografi agar nyaman dibaca.",
-      "Menjaga konsistensi alur, karakter, dan gaya bahasa sepanjang volume.",
-      "Menyiapkan berkas layout final dan memastikan hasilnya siap masuk percetakan."
+    synopsis: `“Every cloud has a silver lining”
+“Setiap kesulitan, pasti terdapat kebaikan yang mengikutinya”
+Perkataan tersebut selalu tertanam dalam hati gadis bisu polos bermata violet itu. Bahwa segala macam hal buruk yang terjadi pada dirinya akan segera berlalu dan kehidupannya akan membaik kelak. 
+Bersabarlah dan teruslah kuat... katanya. Tapi, hanya dengan berbekalkan tekad itu saja, apakah cukup?
+
+Gaby Athalia Chandramaya, gadis remaja berusia 16 tahun itu  terpaksa menjadi ‘pembantu’ di rumah mantan sahabatnya—Samantha Auristela Chandrawarma, yang kini menjadi perundungnya. Ia hanya bisa berusaha bertahan menghadapi rundungan itu selama beberapa tahun, pasrah karena suatu hutang budi.
+Sampai suatu hari, akhirnya, Gaby runtuh. Ia putus asa dan hampir menyerah.
+
+Saat itu, tiba-tiba ia dipertemukan dengan seorang laki-laki yang muncul dan menolongnya, Vicky Giovano Narawikara. Kilauan rambut dari laki-laki galak itu bagaikan perak yang terpantul matahari. Entah takdir atau hanya kebetulan, tapi pertemuan mereka saat itu, perlahan mengubah kehidupan Gaby. Vicky memperkenalkannya pada keberanian bersuara... pada pertemanan yang ia rindukan... dan juga... pada cinta?`,
+    
+highlights: [
+      "Koordinasi dan memastikan proses editorial serta produksi selesai sesuai timeline.",
+      "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
+      "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
+      "Menulis naskah (ghostwriting) berdasarkan konsep dan outline yang tersedia di platform Webtoon yang telah disepakati oleh penerbit.",
+      "Melakukan tata letak (layouting) naskah menggunakan Adobe Indesign."
     ]
   },
   {
@@ -125,12 +135,13 @@ const bookData = [
       fullLabel: "Minta Akses Naskah",
       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
     },
-    synopsis: "ini nanti isi synopsisnya, tapi belum ada karena ini proyek baru. nanti akan diisi setelah naskahnya selesai dan siap untuk dipublikasikan.",
+    synopsis: "Toko bunga Fairy Blossom tidak pernah sepi. Khususnya di hari Sabtu dan Minggu. Setiap akhir pekan, Ocean dan Audine beserta putri mereka, Anira, akan menghabiskan waktu untuk toko bunganya dan menjalankan kehidupan selayaknya ‘manusia biasa’—melayani pelanggan, sekaligus melepas gelar populer yang mereka miliki sebagai keluarga public figure. Belasan tahun sudah terlewati sejak mereka menikah, kini Ocean dan Audine kembali membagikan potongan kehidupannya bukan lagi hanya sebagai pasangan, namun juga sebagai orang tua. Mempertontonkan lagi kasih sayang serta dialog manis bagi ia yang merindu. Dan dari jendela toko bunga, mereka juga melihat lebih dari sekadar kelopak-kelopak yang mekar. Ada pengakuan, harapan, hingga penyesalan di setiap ikatan buket. Cerita kecil dari para pelanggan, sampai permintaan aneh, yang, siapa menyangka malah menjadikan mereka pemandu untuk menyelamatkan banyak hal?",
     highlights: [
-      "Menulis naskah komik (ghostwriting) berdasarkan konsep cerita dan arahan kreatif penerbit.",
-      "Menata layout halaman, alur panel, balon dialog, dan tipografi agar nyaman dibaca.",
-      "Menjaga konsistensi alur, karakter, dan gaya bahasa sepanjang volume.",
-      "Menyiapkan berkas layout final dan memastikan hasilnya siap masuk percetakan."
+      "Koordinasi dan memastikan proses editorial serta produksi selesai sesuai timeline.",
+      "Koordinasi untuk kebutuhan brief tim desain dan kebutuhan konten tim promosi.",
+      "Koordinasi dengan penulis mengenai naskah, keinginan penulis, serta kebutuhan penerbit.",
+      "Memeriksa tanda baca secara teliti (proofreading) pada naskah.",
+      "Melakukan tata letak (layouting) naskah menggunakan Adobe Indesign."
     ]
   }
   // ,
