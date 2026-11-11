@@ -72,7 +72,7 @@ const bookData = [
     title: "Silver Lining",
     publisher: "Akad Media Cakrawala",
     year: "2026",
-    role: "Layouter",
+    role: "Ghostwriter, Project Coordinator, & Layouter",
     badge: "Novel Komik • Vol. 1",
     category: "Novel Komik",
     categoryLabel: "Novel Komik",
