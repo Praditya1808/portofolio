@@ -68,6 +68,38 @@ const bookData = [
     ]
   },
   {
+    id: 7,
+    title: "Silver Lining",
+    publisher: "Akad Media Cakrawala",
+    year: "2026",
+    role: "Ghostwriter & Layout Designer",
+    badge: "Novel Komik • Vol. 1",
+    category: "fiksi-komersial",
+    categoryLabel: "Novel Komik & Fiksi Komersial",
+    wideGallery: true,
+    coverBg: "from-sky-950 via-slate-900 to-teal-950",
+    coverAccent: "text-sky-200",
+    coverPattern: "☂️",
+    images: [
+      "assets/images/books/silver-lining-1.jpg",
+      "assets/images/books/silver-lining-2.jpg"
+    ],
+    manuscript: {
+      sampleUrl: "https://drive.google.com/file/d/1m6oa-uBnSTDNc0CVsmANYLe6AiG_nppn/view?usp=sharing",
+      sampleLabel: "Baca Sampel",
+      fullUrl: "https://drive.google.com/file/d/17sXg9zONh934nxNRc_hZ3LGhib8GRVyj/view?usp=sharing",
+      fullLabel: "Minta Akses Naskah",
+      accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
+    },
+    synopsis: "Novel komik Vol. 1 karya KIKUATAMA tentang Gaby Athalia Chandramaya, gadis 16 tahun yang terpaksa menjadi \"pembantu\" di rumah mantan sahabatnya yang kini justru menjadi perundungnya. Saat ia hampir menyerah, pertemuannya dengan Vicky Giovano Narawikara perlahan mengubah hidupnya—tentang keberanian bersuara, harga diri, dan cinta.",
+    highlights: [
+      "Menulis naskah komik (ghostwriting) berdasarkan konsep cerita dan arahan kreatif penerbit.",
+      "Menata layout halaman, alur panel, balon dialog, dan tipografi agar nyaman dibaca.",
+      "Menjaga konsistensi alur, karakter, dan gaya bahasa sepanjang volume.",
+      "Menyiapkan berkas layout final dan memastikan hasilnya siap masuk percetakan."
+    ]
+  },
+  {
     id: 4,
     title: "Proyek Naskah Fiksi Kontemporer",
     publisher: "Butterflies Books",
@@ -358,6 +390,65 @@ function setupEventListeners() {
   }
 }
 
+// Escape teks sebelum masuk ke markup modal.
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Hanya izinkan tautan https dan mailto agar aman dipakai di atribut href.
+function normalizeManuscriptUrl(value) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (!raw) return "";
+  if (/^https:\/\/[^\s]+$/i.test(raw)) return raw;
+  if (/^mailto:[^\s]+$/i.test(raw)) return raw;
+  return "";
+}
+
+// Blok akses naskah: hanya tampil jika minimal satu tautan valid tersedia.
+function buildManuscriptBlock(book) {
+  const manuscript = book.manuscript;
+  if (!manuscript || typeof manuscript !== "object") return "";
+
+  const sampleUrl = normalizeManuscriptUrl(manuscript.sampleUrl);
+  const fullUrl = normalizeManuscriptUrl(manuscript.fullUrl);
+  if (!sampleUrl && !fullUrl) return "";
+
+  const linkAttributes = (url) =>
+    /^mailto:/i.test(url) ? "" : 'target="_blank" rel="noopener noreferrer"';
+
+  const sampleButton = sampleUrl ? `
+    <a href="${escapeHtml(sampleUrl)}" ${linkAttributes(sampleUrl)}
+      class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-terracotta px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-[#964223]">
+      <i data-lucide="book-open" class="h-3.5 w-3.5"></i>
+      <span>${escapeHtml(manuscript.sampleLabel || "Baca Sampel")}</span>
+      <i data-lucide="external-link" class="h-3 w-3"></i>
+    </a>` : "";
+
+  const fullButton = fullUrl ? `
+    <a href="${escapeHtml(fullUrl)}" ${linkAttributes(fullUrl)}
+      class="inline-flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-stone-300 bg-white px-4 py-2 text-xs font-medium text-stone-700 transition-colors hover:border-terracotta hover:text-terracotta">
+      <i data-lucide="lock" class="h-3.5 w-3.5"></i>
+      <span>${escapeHtml(manuscript.fullLabel || "Minta Akses Naskah")}</span>
+    </a>` : "";
+
+  const accessNote = typeof manuscript.accessNote === "string" && manuscript.accessNote.trim() ? `
+    <p class="flex items-start gap-2 text-[11px] leading-snug text-stone-600">
+      <i data-lucide="shield-check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#A34E2E]"></i>
+      <span>${escapeHtml(manuscript.accessNote)}</span>
+    </p>` : "";
+
+  return `
+    <div class="rounded-xl border border-stone-200 bg-amber-50 p-3.5">
+      ${accessNote}
+      <div class="mt-2.5 flex flex-col gap-2 sm:flex-row">${sampleButton}${fullButton}</div>
+    </div>`;
+}
+
 // Modal Detail Proyek
 let lastFocusedElement = null;
 let activeGalleryBookId = null;
@@ -370,6 +461,7 @@ function openBookModal(id) {
   const images = Array.isArray(book.images) ? book.images : [];
   const hasGallery = images.length > 0;
   const hasMultiple = images.length > 1;
+  const manuscriptBlock = buildManuscriptBlock(book);
 
   activeGalleryBookId = id;
   activeGalleryIndex = 0;
@@ -377,15 +469,21 @@ function openBookModal(id) {
   const modal = document.getElementById("book-modal");
   const modalContent = document.getElementById("modal-content");
 
+  const dialogEl = document.getElementById("book-modal-dialog");
+  if (dialogEl) {
+    dialogEl.classList.toggle("is-wide", book.wideGallery === true);
+    dialogEl.style.maxWidth = book.wideGallery ? "56rem" : "";
+  }
+
   modalContent.innerHTML = `
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
       <!-- Book Visual Left -->
-      <div class="md:col-span-5">
+      <div class="md:col-span-5 book-media">
         ${hasGallery ? `
         <div class="space-y-3">
-          <div class="relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-stone-900 border border-stone-200 shadow-2xl">
+          <div id="book-gallery-frame" class="relative aspect-[2/3] w-full overflow-hidden rounded-lg bg-stone-900 border border-stone-200 shadow-2xl">
             <img id="book-gallery-main" src="${images[0]}" alt="Sampul ${book.title} (1 dari ${images.length})"
-              class="h-full w-full object-contain">
+              class="h-full w-full object-contain" onload="updateGalleryFrame()">
             ${hasMultiple ? `
             <button type="button" onclick="stepGallery(-1)" aria-label="Foto sebelumnya"
               class="absolute left-2 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-stone-950/70 hover:bg-terracotta text-white flex items-center justify-center backdrop-blur-sm border border-white/20 transition-colors">
@@ -405,8 +503,8 @@ function openBookModal(id) {
             ${images.map((src, i) => `
               <button type="button" data-gallery-thumb="${i}" aria-label="Lihat foto ${i + 1}" aria-current="${i === 0 ? "true" : "false"}"
                 onclick="setGalleryImage(${i})"
-                class="aspect-[2/3] overflow-hidden rounded-md border border-stone-200 transition-all ${i === 0 ? "ring-2 ring-terracotta opacity-100" : "opacity-60 hover:opacity-100"}">
-                <img src="${src}" alt="" loading="lazy" decoding="async" class="h-full w-full object-cover">
+                class="aspect-[2/3] overflow-hidden rounded-md border border-stone-200 bg-stone-100 transition-all ${i === 0 ? "ring-2 ring-terracotta opacity-100" : "opacity-60 hover:opacity-100"}">
+                <img src="${src}" alt="" loading="lazy" decoding="async" class="h-full w-full object-contain">
               </button>`).join("")}
           </div>` : ""}
         </div>` : `
@@ -428,10 +526,10 @@ function openBookModal(id) {
       </div>
 
       <!-- Book Info Right -->
-      <div class="md:col-span-7 flex flex-col justify-between space-y-4">
+      <div class="md:col-span-7 book-info flex flex-col justify-between space-y-4">
         <div>
           <div class="flex items-center gap-2 mb-2">
-            <span class="bg-amber-100 text-[#A34E2E] text-xs font-semibold px-2.5 py-0.5 rounded-full border border-amber-300">
+            <span class="bg-amber-100 text-[#A34E2E] text-xs font-semibold px-2.5 py-0.5 rounded-full border border-amber-300 whitespace-nowrap">
               ${book.badge}
             </span>
             <span class="text-xs text-stone-500">• ${book.publisher} (${book.year})</span>
@@ -460,6 +558,8 @@ function openBookModal(id) {
             </div>
           </div>
         </div>
+
+        ${manuscriptBlock}
 
         <div class="pt-4 border-t border-stone-200 flex items-center justify-between">
           <span class="text-xs text-stone-500">Proyek Resmi Penerbitan</span>
@@ -513,6 +613,7 @@ function setGalleryImage(index) {
   if (mainImage) {
     mainImage.src = images[nextIndex];
     mainImage.alt = `Sampul ${book.title} (${nextIndex + 1} dari ${total})`;
+    if (mainImage.complete) updateGalleryFrame();
   }
 
   const counter = document.getElementById("book-gallery-counter");
@@ -528,6 +629,14 @@ function setGalleryImage(index) {
   });
 }
 
+// Sesuaikan rasio bingkai galeri dengan rasio asli gambar agar tidak ada bilah kosong.
+function updateGalleryFrame() {
+  const mainImage = document.getElementById("book-gallery-main");
+  const frame = document.getElementById("book-gallery-frame");
+  if (!mainImage || !frame || !mainImage.naturalWidth || !mainImage.naturalHeight) return;
+
+  frame.style.aspectRatio = `${mainImage.naturalWidth} / ${mainImage.naturalHeight}`;
+}
 function stepGallery(direction) {
   setGalleryImage(activeGalleryIndex + direction);
 }

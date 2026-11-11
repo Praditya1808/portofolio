@@ -41,9 +41,27 @@ Buka `assets/js/main.js`, cari judul bukunya, lalu isi array `images`:
 - **1 foto** → tampil sebagai sampul, tanpa tombol galeri.
 - **2–3 foto** → foto pertama jadi sampul kartu, dan di dalam modal muncul
   panah, thumbnail, counter, serta dukungan geser (swipe) dan tombol panah keyboard.
+- **Foto landscape / spread** → bingkai galeri otomatis menyesuaikan rasio gambar,
+  jadi spread tidak terpotong dan tidak menyisakan ruang kosong.
 - **Kosong (`images: []`)** → kartu memakai desain gradien + emoji yang sekarang,
   jadi website tetap rapi selama foto belum tersedia.
 
 > Tips: jadikan foto **pertama** sebagai sampul portrait 2:3 agar kartu terlihat rapi.
 > Foto kedua/ketiga boleh berupa dokumentasi (landscape); di dalam modal gambar
 > ditampilkan utuh tanpa terpotong (`object-contain`).
+
+Jika satu buku punya spread landscape dan ingin modalnya lebih lebar, tambahkan
+`wideGallery: true` pada data buku di `assets/js/main.js`:
+
+```js
+{
+  id: 7,
+  title: "Silver Lining",
+  // ...
+  wideGallery: true,
+  images: [
+    "assets/images/books/silver-lining-1.jpg",
+    "assets/images/books/silver-lining-2.jpg"
+  ]
+}
+```

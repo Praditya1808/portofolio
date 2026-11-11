@@ -55,6 +55,24 @@ Buka browser dan akses alamat: `http://localhost:3000`
    - Jika `images: []` dibiarkan kosong, kartu tetap memakai desain gradien yang ada.
    - Detail lengkap ada di `assets/images/books/README.md`.
 
+4. **Menambahkan Tautan Sampel & Naskah Penuh**:
+   - Website tidak menyimpan file PDF. Simpan PDF di Google Drive (atau storage lain),
+     lalu tempel tautannya di data buku pada `assets/js/main.js`:
+     ```js
+     manuscript: {
+       sampleUrl: "https://drive.google.com/file/d/.../view",
+       sampleLabel: "Baca Sampel",
+       fullUrl: "https://drive.google.com/file/d/.../view",
+       fullLabel: "Minta Akses Naskah",
+       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
+     }
+     ```
+   - Tombol hanya muncul jika tautannya diisi. Hanya tautan `https://` dan `mailto:`
+     yang diterima; tautan kosong, `http://`, atau `javascript:` akan diabaikan.
+   - Untuk sampel publik, gunakan file terpisah yang memang boleh dibagikan.
+   - Untuk naskah penuh, atur akses Google Drive ke **Viewer**, lalu matikan
+     unduh/cetak/salin. Uji tautan di jendela incognito sebelum dipublikasikan.
+
 ---
 
 ## 🌐 Cara Publikasi / Deploy ke Internet (Gratis)

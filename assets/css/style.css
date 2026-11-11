@@ -79,6 +79,21 @@ body {
   background-color: rgba(28, 25, 23, 0.7);
 }
 
+/* Dialog container hanya menerima fokus programatik; ring biru bawaan
+   browser tidak perlu karena kontrol di dalamnya punya focus state sendiri. */
+#book-modal-dialog:focus,
+#book-modal-dialog:focus-visible {
+  outline: none;
+}
+
+/* Modal lebar untuk buku dengan spread/sampul landscape */
+@media (min-width: 768px) {
+  #book-modal-dialog.is-wide .book-media,
+  #book-modal-dialog.is-wide .book-info {
+    grid-column: span 6 / span 6;
+  }
+}
+
 /* On desktop, always show both Before & After boxes side-by-side */
 @media (min-width: 1024px) {
   #snippet-raw,
