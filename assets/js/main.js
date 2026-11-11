@@ -130,10 +130,10 @@ highlights: [
       "assets/images/books/Lotus.jpeg"
     ],
     manuscript: {
-      sampleUrl: "",
+      sampleUrl: "https://drive.google.com/file/d/1h9MgeQrxS3LS0d8Zu78j6GfJFyBxG7s1/view",
       sampleLabel: "Baca Sampel",
-      fullUrl: "",
-      fullLabel: "Minta Akses Naskah",
+      // fullUrl: "",
+      // fullLabel: "Minta Akses Naskah",
       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
     },
     synopsis: "Toko bunga Fairy Blossom tidak pernah sepi. Khususnya di hari Sabtu dan Minggu. Setiap akhir pekan, Ocean dan Audine beserta putri mereka, Anira, akan menghabiskan waktu untuk toko bunganya dan menjalankan kehidupan selayaknya ‘manusia biasa’—melayani pelanggan, sekaligus melepas gelar populer yang mereka miliki sebagai keluarga public figure. Belasan tahun sudah terlewati sejak mereka menikah, kini Ocean dan Audine kembali membagikan potongan kehidupannya bukan lagi hanya sebagai pasangan, namun juga sebagai orang tua. Mempertontonkan lagi kasih sayang serta dialog manis bagi ia yang merindu. Dan dari jendela toko bunga, mereka juga melihat lebih dari sekadar kelopak-kelopak yang mekar. Ada pengakuan, harapan, hingga penyesalan di setiap ikatan buket. Cerita kecil dari para pelanggan, sampai permintaan aneh, yang, siapa menyangka malah menjadikan mereka pemandu untuk menyelamatkan banyak hal?",
