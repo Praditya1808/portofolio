@@ -95,8 +95,8 @@ const bookData = [
       accessNote: "Sampel publik • naskah penuh view-only dan akses terbatas."
     },
     synopsis: `
-    “Every cloud has a silver lining”
-    “Setiap kesulitan, pasti terdapat kebaikan yang mengikutinya”
+    “Every cloud has a silver lining” <br></br> 
+    “Setiap kesulitan, pasti terdapat kebaikan yang mengikutinya” <br></br>
     Perkataan tersebut selalu tertanam dalam hati gadis bisu polos bermata violet itu. Bahwa segala macam hal buruk yang terjadi pada dirinya akan segera berlalu dan kehidupannya akan membaik kelak. 
     Bersabarlah dan teruslah kuat... katanya. Tapi, hanya dengan berbekalkan tekad itu saja, apakah cukup?
 
